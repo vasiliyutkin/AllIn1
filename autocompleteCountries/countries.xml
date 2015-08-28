@@ -1,0 +1,195 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<root>
+   <countries>
+      <element>Afghanistan</element>
+      <element>Albania</element>
+      <element>Algeria</element>
+      <element>Andorra</element>
+      <element>Angola</element>
+      <element>Antigua and Barbuda</element>
+      <element>Argentina</element>
+      <element>Armenia</element>
+      <element>Aruba</element>
+      <element>Australia</element>
+      <element>Austria</element>
+      <element>Azerbaijan</element>
+      <element>Bahamas</element>
+      <element>Bahrain</element>
+      <element>Bangladesh</element>
+      <element>Barbados</element>
+      <element>Belarus</element>
+      <element>Belgium</element>
+      <element>Belize</element>
+      <element>Benin</element>
+      <element>Bhutan</element>
+      <element>Bolivia</element>
+      <element>Bosnia and Herzegovina</element>
+      <element>Botswana</element>
+      <element>Brazil</element>
+      <element>Brunei</element>
+      <element>Burkina Faso</element>
+      <element>Burma</element>
+      <element>Burundi</element>
+      <element>Cambodia</element>
+      <element>Cameroon</element>
+      <element>Canada</element>
+      <element>Cape Verde</element>
+      <element>Central African Republic</element>
+      <element>Chad</element>
+      <element>Chile</element>
+      <element>China</element>
+      <element>Colombia</element>
+      <element>Comoros</element>
+      <element>Congo</element>
+      <element>Costa Rica</element>
+      <element>Cote Ivoire</element>
+      <element>Croatia</element>
+      <element>Cuba</element>
+      <element>Curacao</element>
+      <element>Cyprus</element>
+      <element>Czech Republic</element>
+      <element>Denmark</element>
+      <element>Djibouti</element>
+      <element>Dominica</element>
+      <element>Dominican Republic</element>
+      <element>East Timor</element>
+      <element>Ecuador</element>
+      <element>Egypt</element>
+      <element>El Salvador</element>
+      <element>Equatorial Guinea</element>
+      <element>Eritrea</element>
+      <element>Estonia</element>
+      <element>Ethiopia</element>
+      <element>Fiji</element>
+      <element>Finland</element>
+      <element>France</element>
+      <element>Gabon</element>
+      <element>Gambia</element>
+      <element>Georgia</element>
+      <element>Germany</element>
+      <element>Ghana</element>
+      <element>Greece</element>
+      <element>Grenada</element>
+      <element>Guatemala</element>
+      <element>Guinea</element>
+      <element>Guinea-Bissau</element>
+      <element>Guyana</element>
+      <element>Haiti</element>
+      <element>Holy See</element>
+      <element>Honduras</element>
+      <element>Hong Kong</element>
+      <element>Hungary</element>
+      <element>Iceland</element>
+      <element>India</element>
+      <element>Indonesia</element>
+      <element>Iran</element>
+      <element>Iraq</element>
+      <element>Ireland</element>
+      <element>Israel</element>
+      <element>Italy</element>
+      <element>Jamaica</element>
+      <element>Japan</element>
+      <element>Jordan</element>
+      <element>Kazakhstan</element>
+      <element>Kenya</element>
+      <element>Kiribati</element>
+      <element>Korea, North</element>
+      <element>Korea, South</element>
+      <element>Kosovo</element>
+      <element>Kuwait</element>
+      <element>Kyrgyzstan</element>
+      <element>Laos</element>
+      <element>Latvia</element>
+      <element>Lebanon</element>
+      <element>Lesotho</element>
+      <element>Liberia</element>
+      <element>Libya</element>
+      <element>Liechtenstein</element>
+      <element>Lithuania</element>
+      <element>Luxembourg</element>
+      <element>Macau</element>
+      <element>Macedonia</element>
+      <element>Madagascar</element>
+      <element>Malawi</element>
+      <element>Malaysia</element>
+      <element>Maldives</element>
+      <element>Mali</element>
+      <element>Malta</element>
+      <element>Marshall Islands</element>
+      <element>Mauritania</element>
+      <element>Mauritius</element>
+      <element>Mexico</element>
+      <element>Micronesia</element>
+      <element>Moldova</element>
+      <element>Monaco</element>
+      <element>Mongolia</element>
+      <element>Montenegro</element>
+      <element>Nepal</element>
+      <element>Netherlands</element>
+      <element>New Zealand</element>
+      <element>Nigeria</element>
+      <element>North Korea</element>
+      <element>Norway</element>
+      <element>Oman</element>
+      <element>Pakistan</element>
+      <element>Palau</element>
+      <element>Palestinian Territories</element>
+      <element>Panama</element>
+      <element>Papua New Guinea</element>
+      <element>Paraguay</element>
+      <element>Peru</element>
+      <element>Philippines</element>
+      <element>Poland</element>
+      <element>Portugal</element>
+      <element>Qatar</element>
+      <element>Romania</element>
+      <element>Russia</element>
+      <element>Rwanda</element>
+      <element>Saint Kitts and Nevis</element>
+      <element>Saint Lucia</element>
+      <element>Saint Vincent and the Grenadines</element>
+      <element>Samoa</element>
+      <element>San Marino</element>
+      <element>Saudi Arabia</element>
+      <element>Singapore</element>
+      <element>Slovakia</element>
+      <element>Slovenia</element>
+      <element>Solomon Islands</element>
+      <element>Somalia</element>
+      <element>South Africa</element>
+      <element>South Korea</element>
+      <element>South Sudan</element>
+      <element>Spain</element>
+      <element>Sri Lanka</element>
+      <element>Sudan</element>
+      <element>Suriname</element>
+      <element>Swaziland</element>
+      <element>Sweden</element>
+      <element>Switzerland</element>
+      <element>Syria</element>
+      <element>Taiwan</element>
+      <element>Tajikistan</element>
+      <element>Tanzania</element>
+      <element>Thailand</element>
+      <element>Timor-Leste</element>
+      <element>Togo</element>
+      <element>Tonga</element>
+      <element>Trinidad and Tobago</element>
+      <element>Tunisia</element>
+      <element>Turkey</element>
+      <element>Turkmenistan</element>
+      <element>Tuvalu</element>
+      <element>Uganda</element>
+      <element>Ukraine</element>
+      <element>United Arab Emirates</element>
+      <element>United Kingdom</element>
+      <element>Uruguay</element>
+      <element>Uzbekistan</element>
+      <element>Vanuatu</element>
+      <element>Venezuela</element>
+      <element>Vietnam</element>
+      <element>Yemen</element>
+      <element>Zambia</element>
+      <element>Zimbabwe</element>
+   </countries>
+</root>
