@@ -1,0 +1,874 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+    <title>JESSEY JEWS</title>
+    <link href='ready/css/RobotoSlab-Regular.ttf' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" href="font-awesome-4.4.0/css/font-awesome.min.css">
+    <link rel="stylesheet" type="text/css" href="ready/css/style.css">
+    <link rel="stylesheet" href="ready/css/bigbox.css" />
+    <link rel="stylesheet" href="ready/css/jquery.validity.css" />
+    <script src="ready/js/jquery-2.1.4.min.js"></script>
+    <script src="ready/js/jquery.validity.js"></script>
+    <script src="ready/js/humane.min.js"></script>
+</head>
+
+<body>
+
+    <div class="container-fluid">
+
+        <form id="emailUs" onsubmit="return false">
+            <div>
+                <p class="closeUs"><strong>close</strong></p>
+            </div>
+            <p>Leave a question or comment and our agents will try to attend to you shortly =)</p>
+            <lable>Introduce yourself*:</lable>
+            <br>
+            <input type="text" required name="emailUs" placeholder="Name, Email" />
+            <br>
+            <lable>Write a message:</lable>
+            <br>
+            <textarea name="message" id="area" cols="30" rows="10"></textarea>
+            <br/>
+            <input type="submit" value="Start Chatting" />
+        </form>
+
+        <div class="wrap-cart">
+            <div>
+                <p class="close">X</p>
+            </div>
+            <h1>Your Personal Jewellery Basket</h1>
+            <div>
+                <ul id="show-cart">
+                </ul>
+                <div>
+                    <input type="text" id="code" placeholder="your code here">
+                    <button type="button" id="codeEnt">check</button>
+                </div>
+                <div id="shipping">
+                    <p>Choose shipping method</p>
+                    <select name="shippingMethod" id="ship">
+                        <option value="free" data-price="0">Free 0$</option>
+                        <option value="standart" data-price="7">Standart 7$</option>
+                        <option value="express" data-price="12">Express 12$</option>
+                        <option value="2nd day air" data-price="26">2nd day air 26$</option>
+                        <option value="overnight" data-price="40">Overnight 40$</option>
+                    </select>
+                </div>
+                <div>You have <span id="count-cart"></span> items in your Basket</div>
+                <div>Total Cart: <span id="total-cart"></span>$</div>
+            </div>
+            <a href="#" id="clear-cart">Clear Basket</a>
+            <a href="#" id="bill">BUY</a>
+        </div>
+
+        <div class="search">
+            <label for="enterJSON">Enter your product</label>
+            <input id='enterJSON' type='text'>
+            <div id='res1'></div>
+        </div>
+        <form action="#" method="post" id="form2" onsubmit="return toSubmit();">
+            <label for="enterEmail">Email</label>
+            <input type="email" id="enterEmail" placeholder="Email" />
+            <label for="enterPassword">Password</label>
+            <input type="password" id="enterPassword" placeholder="Password" />
+            <input type="submit" value="submit" />
+        </form>
+        <form id="form" method="post" action="#" accept-charset="utf-8">
+            <label for="firstName">firstName</label>
+            <input required id="firstName" type="text" name="firstName" placeholder="enter your firstName">
+            <label for="lastName">lastName</label>
+            <input required id="lastName" type="text" name="lastName" placeholder="enter your lastName">
+            <label for="country">Country</label>
+            <input required id="country" type="text" name="country" placeholder="enter your Country">
+            <label for="city">City</label>
+            <input required id="city" type="text" name="city" placeholder="enter your city">
+            <label for="street">Street</label>
+            <input required id="street" type="text" name="street" placeholder="enter your street">
+            <label for="tel">Tel#</label>
+            <input required id="tel" type="tel" name="tel" placeholder="enter your telNumber">
+            <label for="nick">Nickname</label>
+            <input id="nick" type="text" name="nick" placeholder="enter your nickName">
+            <label for="pass1">Enter paswrd*</label><span id="passstrength"></span>
+            <input required type="password" id="pass1" placeholder="*********" />
+            <label for="pass2">repeat paswrd*</label>
+            <input required type="password" id="pass2" placeholder="*********" />
+            <label for="0">Visa/Master</label>
+            <input required id="0" type="text" maxlength="16" placeholder="0000-0000-0000-0000"/>
+            <label for="email">Email*</label>
+            <input required id="email" type="email" name="email" placeholder="example@somth.com">
+            <input id="input" type="submit">
+        </form>
+        <div class="header fl1">
+            <img id="logo" src="images/icons/logo.png" alt="logo" width="100px" height="100px" />
+            <h1 style="color: white">Jewellery webBasket</h1>
+            <ul>
+                <li><a class="button" href="#"><i style="color: #fff;" class="fa fa-bars"></i> Main</a>
+                    <ul class="dropdown">
+                        <li><a href="#brac" id='btn-1' class="button btn1"><i style="color: #fff;" class="fa fa-clone"></i> Bracelets</a></li>
+                        <li><a href="#pend" id='btn-2' class="button btn2"><i style="color: #fff;" class="fa fa-clone"></i> Pendants</a></li>
+                        <li><a href="#ear" id='btn-3' class="button btn3"><i style="color: #fff;" class="fa fa-clone"></i> Earrings</a></li>
+                        <li><a href="#watch" id='btn-4' class="button btn4"><i style="color: #fff;" class="fa fa-clone"></i> Watches</a></li>
+                        <li><a href="#ring" id='btn-5' class="button btn5"><i style="color: #fff;" class="fa fa-clone"></i> Rings</a></li>
+                        <li><a href="#chain" id='btn-6' class="button btn6"><i style="color: #fff;" class="fa fa-clone"></i> Chains</a></li>
+                    </ul>
+                </li>
+                <li><a class="button" href="#"><i style="color: #fff;" class="fa fa-commenting-o"></i> Contacts</a>
+                    <ul class="dropdown">
+                        <li><a href="http://www.vk.com/crazy" class="button"><i style="color: #fff;" class="fa fa-vk"></i> we in VK</a></li>
+                        <li><a href="http://www.facebook.com/crazy" class="button"><i style="color: #fff;" class="fa fa-facebook"></i> we in FB</a></li>
+                        <li><a id="chat" href="#" class="button"><i style="color: #fff;" class="fa fa-wechat"></i> Email us</a></li>
+                        <li><a onclick="humane.log('+390-99-4298-2921')" href="#" class="button"><i style="color: #fff;" class="fa fa-phone"></i> Call us</a></li>
+                    </ul>
+                </li>
+                <li><a class="button" href="#"><i style="color: #fff;" class="fa fa-share-square-o"></i> More-info</a>
+                    <ul class="dropdown">
+                        <li><a href="index1.html" class="button"><i style="color: #fff;" class="fa fa-diamond"></i> Celeb's</a></li>
+                        <li><a href="index2.html" class="button"><i style="color: #fff;" class="fa fa-diamond"></i> About</a></li>
+                        <li><a href="index3.html" class="button"><i style="color: #fff;" class="fa fa-diamond"></i> Info</a></li>
+                        <li><a href="index4.html" class="button"><i style="color: #fff;" class="fa fa-diamond"></i> Basket</a></li>
+                    </ul>
+                </li>
+                <li><a class="button" href="#" id="search"><i style="color: #fff;" class="fa fa-search"></i> Search</a></li>
+                <li><a href="#" class="button" id="sign"><i style="color: #fff;" class="fa fa-map-signs"></i> Sign in</a></li>
+                <li><a href="#" class="button" id="login"><i style="color: #fff;" class="fa fa-hand-peace-o "></i> Login</a></li>
+                <li><a href="#" class="button" id="card" style="display: none"><i class="fa fa-opencart
+            fa-2x" style="color: #fff;"></i> Basket (<span id="cart-count"></span>)</a></li>
+            </ul>
+        </div>
+        <div class="sidebar fl2">
+            <i class="icon-menu fa fa-paper-plane fa-lg" style="cursor: pointer;"></i>
+            <br/>
+            <i style="position: absolute; right: 2px; top: 2px;" class="fa fa-heart fa-1x mainLike"> <span id="forMainLike"></span></i>
+            <div id="wrap-promo">
+                <p>Take your 15% discount</p>
+                <input type="button" name="promo" id="promo" value="get Promo">
+                <p id="forPromo"></p>
+            </div>
+        </div>
+
+        <div id="wrap-list" class="fl31">
+            <div class="icon-close">
+                <i class="fa fa-remove fa-lg" style="cursor: pointer; margin: 10px"></i>
+            </div>
+            <div class="forSearch">
+                <label for="priceFilter1">Sort by MinPrice</label>
+                <input type="search" id="priceFilter1" />
+                <label for="priceFilter2">Sort by MaxPrice</label>
+                <input type="search" id="priceFilter2" />
+                <label for="nameFilter">Sort by Name</label>
+                <input type="search" id="nameFilter" />
+            </div>
+            <h5 id="header">We provide our delivery in listed countries:</h5>
+            <ul id="list">
+                <li><a href="#/australia/">Australia</a></li>
+                <li><a href="#/austria/">Austria</a></li>
+                <li><a href="#/belgium/">Belgium</a></li>
+                <li><a href="#/brazil/">Brazil</a></li>
+                <li><a href="#/canada/">Canada</a></li>
+                <li><a href="#/ukraine/">Ukraine</a></li>
+                <li><a href="#/poland/">Poland</a></li>
+                <li><a href="#/belarussia/">Belarussia</a></li>
+                <li><a href="#/denmark/">Denmark</a></li>
+                <li><a href="#/finland/">Finland</a></li>
+                <li><a href="#/france/">France</a></li>
+                <li><a href="#/germany/">Germany</a></li>
+                <li><a href="#/greece/">Greece</a></li>
+                <li><a href="#/ireland/">Ireland</a></li>
+                <li><a href="#/israel/">Israel</a></li>
+                <li><a href="#/italy/">Italy</a></li>
+                <li><a href="#/japan/">Japan</a></li>
+                <li><a href="#/luxembourg/">Luxembourg</a></li>
+                <li><a href="#/mexico/">Mexico</a></li>
+                <li><a href="#/netherlands/">Netherlands</a></li>
+                <li><a href="#/norway/">Norway</a></li>
+                <li><a href="#/poland/">Poland</a></li>
+                <li><a href="#/portugal/">Portugal</a></li>
+                <li><a href="#/russia/">Russia</a></li>
+                <li><a href="#/spain/">Spain</a></li>
+                <li><a href="#/sweden/">Sweden</a></li>
+                <li><a href="#/switzerland/">Switzerland</a></li>
+                <li><a href="#/turkey/">Turkey</a></li>
+                <li><a href="#/united-kingdom/">United Kingdom</a></li>
+                <li><a href="#/united-states/">United States</a></li>
+            </ul>
+        </div>
+
+        <div class="main fl3">
+            <div class="wrap">
+                <div class="img"><img src="images/bracelets/18k-gold-id-bracelet-brx9853_1100.jpg" alt="some pic"></div>
+                <div class="text">
+                    <h2>Bracelets</h2>
+                    <p>Average price for this type of goods: 100$</p>
+                    <a href="#" class="btn1 button">View all <i style="color: black;" class="fa fa-paw fa-lg"></i></a></div>
+                <div class="container" id="brac">
+                    <div class="thumb">
+                        <div class="content">
+                            <h4>Pharaoh's braces</h4>
+                            <p>
+                                Rock a sick pair of genuine diamond earrings! These .925 sterling silver earrings are encrusted with real diamonds in a micro pave setting. These diamonds will shine in any light. Available in 7mm .25CTW. </p>
+                            <a class="add-to-cart" href="#" data-name="Pharaoh" data-price="100">click to buy -> Pharaoh 100$</a>
+                            <i class="fa fa-heart no-like"></i>
+                        </div>
+                        <div class="wrapper">
+                            <img src="images/bracelets/18k-gold-id-bracelet-brx9853_1100.jpg">
+                        </div>
+                    </div>
+                    <div class="thumb">
+                        <div class="content">
+                            <h4>Pharaoh's braces</h4>
+                            <p>
+                                Rock a sick pair of genuine diamond earrings! These .925 sterling silver earrings are encrusted with real diamonds in a micro pave setting. These diamonds will shine in any light. Available in 7mm .25CTW. </p>
+                            <a class="add-to-cart" href="#" data-name="Street" data-price="110">click to buy -> Street 110$</a>
+                            <br /> <i class="fa fa-heart no-like"></i>
+                        </div>
+                        <div class="wrapper">
+                            <img src="images/bracelets/black-on-blk-curve-screw-bracelet-brx08630_1100.jpg">
+                        </div>
+                    </div>
+                    <div class="thumb">
+                        <div class="content">
+                            <h4>Pharaoh's braces</h4>
+                            <p>Rock a sick pair of genuine diamond earrings! These .925 sterling silver earrings are encrusted with real diamonds in a micro pave setting. These diamonds will shine in any light. Available in 7mm .25CTW.</p>
+                            <a class="add-to-cart" href="#" data-name="RoundBeadz" data-price="120">click to buy -> RoundBeadz 120$</a>
+                            <br /> <i class="fa fa-heart no-like"></i>
+                        </div>
+                        <div class="wrapper">
+                            <img src="images/bracelets/brx11163-rhodium-cz-pyramid-bangle.jpg">
+                        </div>
+                    </div>
+                    <div class="thumb">
+                        <div class="content">
+                            <h4>Pharaoh's braces</h4>
+                            <p>
+                                Rock a sick pair of genuine diamond earrings! These .925 sterling silver earrings are encrusted with real diamonds in a micro pave setting. These diamonds will shine in any light. Available in 7mm .25CTW. </p>
+                            <a class="add-to-cart" href="#" data-name="Leather" data-price="130">click to buy -> Leather 130$</a>
+                            <br /> <i class="fa fa-heart no-like"></i>
+                        </div>
+                        <div class="wrapper">
+                            <img src="images/bracelets/gold-half-barrel-bracelet-brx08606_1100_2.jpg">
+                        </div>
+                    </div>
+                    <div class="thumb">
+                        <div class="content">
+                            <h4>Pharaoh's braces</h4>
+                            <p>
+                                Rock a sick pair of genuine diamond earrings! These .925 sterling silver earrings are encrusted with real diamonds in a micro pave setting. These diamonds will shine in any light. Available in 7mm .25CTW. </p>
+                            <a class="add-to-cart" href="#" data-name="Steel" data-price="80">click to buy -> Steel 80$</a>
+                            <br /> <i class="fa fa-heart no-like"></i>
+                        </div>
+                        <div class="wrapper">
+                            <img src="images/bracelets/gold-square-ret-bracelet-brx08609_1100.jpg">
+                        </div>
+                    </div>
+                    <a id="close1" href="#" class="button" style="text-decoration: none; text-transform: uppercase; width: 50px; height: 20px; text-align: center; color: #000; background: #fff;">Hide  <i style="color: black;" class="fa fa-paw fa-lg"></i></a>
+                </div>
+            </div>
+            <div class="wrap">
+                <div class="img"><img src="images/pendants/14k-gold-dominican-rosary-necklace_nkx10951_4.jpg"></div>
+                <div class="text">
+                    <h2>Pendants</h2>
+                    <p>Average price for this type of goods: 150$</p>
+                    <a href="#" class="btn2 button">View all <i style="color: black;" class="fa fa-paw fa-lg"></i></a>
+                </div>
+                <div class="container" id="pend">
+                    <div class="thumb">
+                        <div class="content">
+                            <h4>Crosses</h4>
+                            <p>
+                                Rock a sick pair of genuine diamond earrings! These .925 sterling silver earrings are encrusted with real diamonds in a micro pave setting. These diamonds will shine in any light. Available in 7mm .25CTW. </p>
+                            <a class="add-to-cart" href="#" data-name="Cross neclase" data-price="120">click to buy -> Cross neclase 120$</a>
+                            <br /> <i class="fa fa-heart no-like"></i>
+
+                        </div>
+                        <div class="wrapper">
+                            <img src="images/pendants/king-ice-silver-angel-and-jesus-piece-rosary-necklace_nkx10952_1.jpg">
+                        </div>
+                    </div>
+                    <div class="thumb">
+                        <div class="content">
+                            <h4>Crosses</h4>
+                            <p>
+                                Rock a sick pair of genuine diamond earrings! These .925 sterling silver earrings are encrusted with real diamonds in a micro pave setting. These diamonds will shine in any light. Available in 7mm .25CTW. </p>
+                            <a class="add-to-cart" href="#" data-name="Dual latin" data-price="150">click to buy -> Dual latin 150$</a>
+                            <br /> <i class="fa fa-heart no-like"></i>
+
+                        </div>
+                        <div class="wrapper">
+                            <img src="images/pendants/14k-gold-dominican-rosary-necklace_nkx10951_4.jpg">
+                        </div>
+                    </div>
+                    <div class="thumb">
+                        <div class="content">
+                            <h4>Crosses</h4>
+                            <p>
+                                Rock a sick pair of genuine diamond earrings! These .925 sterling silver earrings are encrusted with real diamonds in a micro pave setting. These diamonds will shine in any light. Available in 7mm .25CTW. </p>
+                            <a class="add-to-cart" href="#" data-name="Dutiful" data-price="140">click to buy -> Dutiful 140$</a>
+                            <br /> <i class="fa fa-heart no-like"></i>
+
+                        </div>
+                        <div class="wrapper">
+                            <img src="images/pendants/king-ice-14k-gold-rosary-necklace_nkx10956_3_ki.jpg">
+                        </div>
+                    </div>
+                    <div class="thumb">
+                        <div class="content">
+                            <h4>Crosses</h4>
+                            <p>
+                                Rock a sick pair of genuine diamond earrings! These .925 sterling silver earrings are encrusted with real diamonds in a micro pave setting. These diamonds will shine in any light. Available in 7mm .25CTW. </p>
+                            <a class="add-to-cart" href="#" data-name="Canary" data-price="170">click to buy -> Canary 170$</a>
+                            <br /> <i class="fa fa-heart no-like"></i>
+
+                        </div>
+                        <div class="wrapper">
+                            <img src="images/pendants/king-ice-14k-gold-spider-skull-rosary_nkx10957_3.jpg">
+                        </div>
+                    </div>
+                    <div class="thumb">
+                        <div class="content">
+                            <h4>Crosses</h4>
+                            <p>
+                                Rock a sick pair of genuine diamond earrings! These .925 sterling silver earrings are encrusted with real diamonds in a micro pave setting. These diamonds will shine in any light. Available in 7mm .25CTW. </p>
+                            <a class="add-to-cart" href="#" data-name="Roman" data-price="180">click to buy -> Roman 180$</a>
+                            <br /> <i class="fa fa-heart no-like"></i>
+
+                        </div>
+                        <div class="wrapper">
+                            <img src="images/pendants/nkx11096-14k-gold-isis-rosary-necklace_2.jpg">
+                        </div>
+                    </div>
+                    <a id="close2" href="#" class="button" style="text-decoration: none; text-transform: uppercase; width: 50px; height: 20px; text-align: center; color: #000; background: #fff;">Hide <i style="color: black;" class="fa fa-paw fa-lg"></i></a>
+
+                </div>
+            </div>
+            <div class="wrap">
+                <div class="img"><img src="images/earrings/mens-diamond-earrings-erx10493_1100.jpg" alt="some pic"></div>
+                <div class="text">
+                    <h2>Earrings</h2>
+                    <p>Average price for this type of goods: 40$</p>
+                    <a href="#" class="btn3 button">View all <i style="color: black;" class="fa fa-paw fa-lg"></i></a></div>
+                <div class="container" id="ear">
+                    <div class="thumb">
+                        <div class="content">
+                            <h4>DIAMOND STUD</h4>
+                            <p>
+                                Rock a sick pair of genuine diamond earrings! These .925 sterling silver earrings are encrusted with real diamonds in a micro pave setting. These diamonds will shine in any light. Available in 7mm .25CTW.
+                            </p>
+                            <a class="add-to-cart" href="#" data-name="Shaped diamond" data-price="47">click to buy -> Shaped diamond 47$</a>
+                            <br /> <i class="fa fa-heart no-like"></i>
+
+                        </div>
+                        <div class="wrapper">
+                            <img src="images/earrings/diamond-bling-earrings-ERS01223_500_20.jpg">
+                        </div>
+                    </div>
+                    <div class="thumb">
+                        <div class="content">
+                            <h4>DIAMOND STUD</h4>
+                            <p>
+                                Rock a sick pair of genuine diamond earrings! These .925 sterling silver earrings are encrusted with real diamonds in a micro pave setting. These diamonds will shine in any light. Available in 7mm .25CTW. </p>
+                            <a class="add-to-cart" href="#" data-name="Stud diamond" data-price="62">click to buy -> Stud diamond 62$</a>
+                            <br /> <i class="fa fa-heart no-like"></i>
+                        </div>
+                        <div class="wrapper">
+                            <img src="images/earrings/mens-diamond-earrings-erx10493_1100.jpg">
+                        </div>
+                    </div>
+                    <div class="thumb">
+                        <div class="content">
+                            <h4>DIAMOND STUD</h4>
+                            <p>
+                                Rock a sick pair of genuine diamond earrings! These .925 sterling silver earrings are encrusted with real diamonds in a micro pave setting. These diamonds will shine in any light. Available in 7mm .25CTW. </p>
+                            <a class="add-to-cart" href="#" data-name="Silver diamond" data-price="40">click to buy -> Silver diamond 40$</a>
+                            <br /> <i class="fa fa-heart no-like"></i>
+                        </div>
+                        <div class="wrapper">
+                            <img src="images/earrings/mens-diamond-earrings-erx10495_1100.jpg">
+                        </div>
+                    </div>
+                    <div class="thumb">
+                        <div class="content">
+                            <h4>DIAMOND STUD</h4>
+                            <p>
+                                Rock a sick pair of genuine diamond earrings! These .925 sterling silver earrings are encrusted with real diamonds in a micro pave setting. These diamonds will shine in any light. Available in 7mm .25CTW. </p>
+                            <a class="add-to-cart" href="#" data-name="Rounded" data-price="37">click to buy -> Rounded 37$</a>
+                            <br /> <i class="fa fa-heart no-like"></i>
+                        </div>
+                        <div class="wrapper">
+                            <img src="images/earrings/mens-diamond-earrings-erx10497_1100.jpg">
+                        </div>
+                    </div>
+                    <div class="thumb">
+                        <div class="content">
+                            <h4>DIAMOND STUD</h4>
+                            <p>
+                                Rock a sick pair of genuine diamond earrings! These .925 sterling silver earrings are encrusted with real diamonds in a micro pave setting. These diamonds will shine in any light. Available in 7mm .25CTW. </p>
+                            <a class="add-to-cart" href="#" data-name="Cilling souler" data-price="75">click to buy -> Cilling souler 75$</a>
+                            <br /> <i class="fa fa-heart no-like"></i>
+                        </div>
+                        <div class="wrapper">
+                            <img src="images/earrings/Diamond-Earrings-ERS01165_500_16.jpg">
+                        </div>
+                    </div>
+                    <a id="close3" href="#" class="button" style="text-decoration: none; text-transform: uppercase; width: 50px; height: 20px; text-align: center; color: #000; background: #fff;">Hide <i style="color: black;" class="fa fa-paw fa-lg"></i></a>
+                </div>
+            </div>
+            <div class="wrap">
+                <div class="img"><img src="images/watches/50mm-king-ice-two-tone-men_s-watch_acx10872.jpg" alt="some pic"></div>
+                <div class="text">
+                    <h2>Watches</h2>
+                    <p>Average price for this type of goods: 270$</p>
+                    <a href="#" class="btn4 button">View all <i style="color: black;" class="fa fa-paw fa-lg"></i></a></div>
+                <div class="container" id="watch">
+                    <div class="thumb">
+                        <div class="content">
+                            <h4>HIP HOP WATCHES</h4>
+                            <p>
+                                Rock a sick pair of genuine diamond earrings! These .925 sterling silver earrings are encrusted with real diamonds in a micro pave setting. These diamonds will shine in any light. Available in 7mm .25CTW. </p>
+                            <a class="add-to-cart" href="#" data-name="Street watches" data-price="120">click to buy -> Street watches 120$</a>
+                            <br /> <i class="fa fa-heart no-like"></i>
+                        </div>
+                        <div class="wrapper">
+                            <img src="images/watches/acx10870.jpg">
+                        </div>
+                    </div>
+                    <div class="thumb">
+                        <div class="content">
+                            <h4>HIP HOP WATCHES</h4>
+                            <p>
+                                Rock a sick pair of genuine diamond earrings! These .925 sterling silver earrings are encrusted with real diamonds in a micro pave setting. These diamonds will shine in any light. Available in 7mm .25CTW. </p>
+                            <a class="add-to-cart" href="#" data-name="Street watches colden" data-price="210">click to buy -> Street watches colden 210$</a>
+                            <br /> <i class="fa fa-heart no-like"></i>
+                        </div>
+                        <div class="wrapper">
+                            <img src="images/watches/acx11329-cz-streetwear-watch.jpg">
+                        </div>
+                    </div>
+                    <div class="thumb">
+                        <div class="content">
+                            <h4>HIP HOP WATCHES</h4>
+                            <p>
+                                Rock a sick pair of genuine diamond earrings! These .925 sterling silver earrings are encrusted with real diamonds in a micro pave setting. These diamonds will shine in any light. Available in 7mm .25CTW. </p>
+                            <a class="add-to-cart" href="#" data-name="Street watches 2" data-price="200">click to buy -> Street watches 2 200$</a>
+                            <br /> <i class="fa fa-heart no-like"></i>
+                        </div>
+                        <div class="wrapper">
+                            <img src="images/watches/50mm-king-ice-two-tone-men_s-watch_acx10872.jpg">
+                        </div>
+                    </div>
+                    <div class="thumb">
+                        <div class="content">
+                            <h4>HIP HOP WATCHES</h4>
+                            <p>
+                                Rock a sick pair of genuine diamond earrings! These .925 sterling silver earrings are encrusted with real diamonds in a micro pave setting. These diamonds will shine in any light. Available in 7mm .25CTW. </p>
+                            <a class="add-to-cart" href="#" data-name="Street watches guarana" data-price="300">click to buy -> Street watches guarana 300$</a>
+                            <br /> <i class="fa fa-heart no-like"></i>
+                        </div>
+                        <div class="wrapper">
+                            <img src="images/watches/king-ice-14k-gold-men_s-cz-watch_acx10935.jpg">
+                        </div>
+                    </div>
+                    <div class="thumb">
+                        <div class="content">
+                            <h4>HIP HOP WATCHES</h4>
+                            <p>
+                                Rock a sick pair of genuine diamond earrings! These .925 sterling silver earrings are encrusted with real diamonds in a micro pave setting. These diamonds will shine in any light. Available in 7mm .25CTW. </p>
+                            <a class="add-to-cart" href="#" data-name="Street watch mason" data-price="310">click to buy -> Street watch mason 310$</a>
+                            <br /> <i class="fa fa-heart no-like"></i>
+                        </div>
+                        <div class="wrapper">
+                            <img src="images/watches/urban-watch-acx10206_1100.jpg">
+                        </div>
+                    </div>
+                    <a id="close4" href="#" class="button" style="text-decoration: none; text-transform: uppercase; width: 50px; height: 20px; text-align: center; color: #000; background: #fff;">Hide <i style="color: black;" class="fa fa-paw fa-lg"></i></a>
+
+                </div>
+            </div>
+            <div class="wrap">
+                <div class="img"><img src="images/rings/rgx11150.jpg" alt="some pic"></div>
+                <div class="text">
+                    <h2>Rings</h2>
+                    <p>Average price for this type of goods: 120$</p>
+                    <a href="#" class="btn5 button">View all <i style="color: black;" class="fa fa-paw fa-lg"></i></a></div>
+                <div class="container" id="ring">
+                    <div class="thumb">
+                        <div class="content">
+                            <h4>PLATINUM LOOK</h4>
+                            <p>
+                                Rock a sick pair of genuine diamond earrings! These .925 sterling silver earrings are encrusted with real diamonds in a micro pave setting. These diamonds will shine in any light. Available in 7mm .25CTW. </p>
+                            <a class="add-to-cart" href="#" data-name="Ring absorb" data-price="100">click to buy -> Ring absorb 100$</a>
+                            <br /> <i class="fa fa-heart no-like"></i>
+                        </div>
+                        <div class="wrapper">
+                            <img src="images/rings/king-ice-14k-gold-tupac-crown-ring-rgx10416_1100_2.jpg">
+                        </div>
+                    </div>
+                    <div class="thumb">
+                        <div class="content">
+                            <h4>PLATINUM LOOK</h4>
+                            <p>
+                                Rock a sick pair of genuine diamond earrings! These .925 sterling silver earrings are encrusted with real diamonds in a micro pave setting. These diamonds will shine in any light. Available in 7mm .25CTW. </p>
+                            <a class="add-to-cart" href="#" data-name="Ring soleir" data-price="120">click to buy -> Ring soleir 120$</a>
+                            <br /> <i class="fa fa-heart no-like"></i>
+                        </div>
+                        <div class="wrapper">
+                            <img src="images/rings/king-ice-hip-hop-ring-rgx10567_1100.jpg">
+                        </div>
+                    </div>
+                    <div class="thumb">
+                        <div class="content">
+                            <h4>PLATINUM LOOK</h4>
+                            <p>
+                                Rock a sick pair of genuine diamond earrings! These .925 sterling silver earrings are encrusted with real diamonds in a micro pave setting. These diamonds will shine in any light. Available in 7mm .25CTW. </p>
+                            <a class="add-to-cart" href="#" data-name="Ring maroni" data-price="130">click to buy -> Ring maroni 130$</a>
+                            <br /> <i class="fa fa-heart no-like"></i>
+                        </div>
+                        <div class="wrapper">
+                            <img src="images/rings/men_s-ring-rgx10049_1100.jpg">
+                        </div>
+                    </div>
+                    <div class="thumb">
+                        <div class="content">
+                            <h4>PLATINUM LOOK</h4>
+                            <p>
+                                Rock a sick pair of genuine diamond earrings! These .925 sterling silver earrings are encrusted with real diamonds in a micro pave setting. These diamonds will shine in any light. Available in 7mm .25CTW. </p>
+                            <a class="add-to-cart" href="#" data-name="Ring loreal" data-price="170">click to buy -> Ring loreal 170$</a>
+                            <br /> <i class="fa fa-heart no-like"></i>
+                        </div>
+                        <div class="wrapper">
+                            <img src="images/rings/rgx10830.jpg">
+                        </div>
+                    </div>
+                    <div class="thumb">
+                        <div class="content">
+                            <h4>PLATINUM LOOK</h4>
+                            <p>
+                                Rock a sick pair of genuine diamond earrings! These .925 sterling silver earrings are encrusted with real diamonds in a micro pave setting. These diamonds will shine in any light. Available in 7mm .25CTW. </p>
+                            <a class="add-to-cart" href="#" data-name="Ring sabre" data-price="90">click to buy -> Ring sabre 90$</a>
+                            <br /> <i class="fa fa-heart no-like"></i>
+                        </div>
+                        <div class="wrapper">
+                            <img src="images/rings/rgx11150.jpg">
+                        </div>
+                    </div>
+                    <a id="close5" href="#" class="button" style="text-decoration: none; text-transform: uppercase; width: 50px; height: 20px; text-align: center; color: #000; background: #fff;">Hide <i style="color: black;" class="fa fa-paw fa-lg"></i></a>
+                </div>
+            </div>
+
+            <div class="wrap">
+                <div class="img"><img src="images/chains/platinum-franco-nkx08600_1100.jpg" alt="some pic"></div>
+                <div class="text">
+                    <h2>Chains</h2>
+                    <p>Average price for this type of goods: 120$</p>
+                    <a href="#" class="btn6 button">View all <i style="color: black;" class="fa fa-paw fa-lg"></i></a></div>
+                <div class="container" id="chain">
+                    <div class="thumb">
+                        <div class="content">
+                            <h4>ROSARIES</h4>
+                            <p>
+                                Rock a sick pair of genuine diamond earrings! These .925 sterling silver earrings are encrusted with real diamonds in a micro pave setting. These diamonds will shine in any light. Available in 7mm .25CTW. </p>
+                            <a class="add-to-cart" href="#" data-name="Franco" data-price="120">click to buy -> Franco 120$</a>
+                            <br /> <i class="fa fa-heart no-like"></i>
+                        </div>
+                        <div class="wrapper">
+                            <img src="images/chains/black-franco-3mm-nkx08602_1100.jpg">
+                        </div>
+                    </div>
+                    <div class="thumb">
+                        <div class="content">
+                            <h4>ROSARIES</h4>
+                            <p>
+                                Rock a sick pair of genuine diamond earrings! These .925 sterling silver earrings are encrusted with real diamonds in a micro pave setting. These diamonds will shine in any light. Available in 7mm .25CTW. </p>
+                            <a class="add-to-cart" href="#" data-name="Pharaoh" data-price="142">click to buy -> Pharaoh 142$</a>
+                            <i class="fa fa-heart no-like"></i>
+                        </div>
+                        <div class="wrapper">
+                            <img src="images/chains/hip-hop-franco-chain-nkx10198_1100.jpg">
+                        </div>
+                    </div>
+                    <div class="thumb">
+                        <div class="content">
+                            <h4>ROSARIES</h4>
+                            <p>
+                                Rock a sick pair of genuine diamond earrings! These .925 sterling silver earrings are encrusted with real diamonds in a micro pave setting. These diamonds will shine in any light. Available in 7mm .25CTW. </p>
+                            <a class="add-to-cart" href="#" data-name="White gold" data-price="210">click to buy -> White gold 210$</a>
+                            <br /> <i class="fa fa-heart no-like"></i>
+                        </div>
+                        <div class="wrapper">
+                            <img src="images/chains/platinum-franco-nkx08600_1100.jpg">
+                        </div>
+                    </div>
+                    <div class="thumb">
+                        <div class="content">
+                            <h4>ROSARIES</h4>
+                            <p>
+                                Rock a sick pair of genuine diamond earrings! These .925 sterling silver earrings are encrusted with real diamonds in a micro pave setting. These diamonds will shine in any light. Available in 7mm .25CTW. </p>
+                            <a class="add-to-cart" href="#" data-name="Black rhodium" data-price="175">click to buy -> Black rhodium 175$</a>
+                            <br /> <i class="fa fa-heart no-like"></i>
+                        </div>
+                        <div class="wrapper">
+                            <img src="images/chains/nkx03753_500w_38.jpg">
+                        </div>
+                    </div>
+                    <div class="thumb">
+                        <div class="content">
+                            <h4>ROSARIES</h4>
+                            <p>
+                                Rock a sick pair of genuine diamond earrings! These .925 sterling silver earrings are encrusted with real diamonds in a micro pave setting. These diamonds will shine in any light. Available in 7mm .25CTW. </p>
+                            <a class="add-to-cart" href="#" data-name="Silver plated" data-price="145">click to buy -> Silver plated 145$</a>
+                            <br /> <i class="fa fa-heart no-like"></i>
+                        </div>
+                        <div class="wrapper">
+                            <img src="images/chains/nkx09915_1100.jpg">
+                        </div>
+                    </div>
+                    <a id="close6" href="#" class="button" style="text-decoration: none; text-transform: uppercase; width: 50px; height: 20px; text-align: center; color: #000; background: #fff;">Hide <i style="color: black;" class="fa fa-paw fa-lg"></i></a>
+                </div>
+            </div>
+        </div>
+
+        <!-- articles container-->
+        <div class="articles">
+
+            <div class="article current">
+                <div class="item">
+                    <div class="title">
+                        HIP HOP BRACELETS
+                    </div>
+                </div>
+                <div class="description">
+                    <div>
+                        <h3>THE JT QUALITY: HIP HOP BRACELETS
+                        </h3>
+                        <p>Our men's bracelets all use the highest grade of materials, from our matte-finished onyx stones to our 14K gold plated hip hop bracelets. Meanwhile, our creative vision for some of our most popular lines, like our Mala Collection, offers a fresh look in a saturated market of wood bracelets. JT continues to combine the highest quality of materials to create some of the most fashionable and iconic hip hop and streetwear items that redefine the standards of men's bracelets.</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="article">
+                <div class="item">
+                    <div class="title">
+                        HIP HOP PENDANTS
+                    </div>
+                </div>
+                <div class="description">
+                    <div>
+                        <h3>THE JT QUALITY: HIP HOP PENDANTS
+                        </h3>
+                        <p>JT delivers the most fashionable hip hop pendants because of our promise of combining inventive designs with the most cutting-edge technology. Each pendant, from its conception right to its final design, takes months of planning, development and revisions prior to reaching your door steps. All of our men's pendants come plated in 14K or 18K gold or rhodium to provide the best shine and protection possible. Meanwhile, our pendants include hand set, CZ stones that come placed along a micro pave setting to create better design layouts. And with the JT logo laser engraved on each pendant, everyone will know who you're repping!
+
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="article">
+                <div class="item">
+                    <div class="title">
+                        MEN'S EARRINGS
+                    </div>
+                </div>
+                <div class="description">
+                    <div>
+                        <h3>MEN'S DIAMOND EARRINGS
+                        </h3>
+                        <p>Our diamond earrings use 14K solid gold or .925 sterling silver to provide the best shine and quality possible. Our hip hop men's earrings, like our Diamond Collection, uses real diamonds cut into a round or princess style. Our male earrings all use hand-set stones placed along a micro pave or prong setting, while our casted silver studs use CZ stones with gold, black or rose-gold plated coatings. Although fashion in general can go through trends in a matter of months, men's earrings tend to remain in style for years. Today's men's diamond stud earrings for example, look practically identical to those from the 1980s when hip hop music became popular. For jewelry you plan to use for years to come, there's no better choice than diamond stud earrings for men.
+
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="article">
+                <div class="item">
+                    <div class="title">
+                        HIP HOP WATCHES
+                    </div>
+                </div>
+                <div class="description">
+                    <div>
+                        <h3>THE JT QUALITY: HIP HOP WATCHES
+                        </h3>
+                        <p>All of our hip hop watches take inspiration from their high-end counterparts, outfitted with CZ stones, built with large, eye-catching watch faces and lined with 14K gold. And just like our JT Pendants, each watch spends months in development prior to being approved for production, and by using only the highest quality of materials, we're able to provide the best possible product. Whether it's chronograph or men's gold watches, JT provides an assortment of options.
+
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="article">
+                <div class="item">
+                    <div class="title">
+                        HIP HOP RINGS
+                    </div>
+                </div>
+                <div class="description">
+                    <div>
+                        <h3>THE JT QUALITY: HIP HOP RINGS
+                        </h3>
+                        <p>From rose-gold rings to bling rings, JT's collection of style, colors and designs takes its inspiration from high-end designers and a stable of creative minds that continue to produce the most contemporary, iconic rings for the hip hop and streetwear communities. From our collection of Premium Rings to our plush Vintage Collection, JT excels at meeting and exceeding the needs and expectations of the hip hop and streetwear communities. Whether it's from our .925 sterling silver hip hop rings or from our skull-designed items, JT offers one-of-a-kind products that will draw attention, no matter if you're walking the streets of your hometown or touring the clubs.
+
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="article">
+                <div class="item">
+                    <div class="title">
+                        HIP HOP CHAINS
+                    </div>
+                </div>
+                <div class="description">
+                    <div>
+                        <h3>THE JT QUALITY: HIP HOP CHAINS
+                        </h3>
+                        <p>Carrying the widest assortment of hip hop chains on the Web, JT continues to provide a collection of modern and retro-style chains that pay tribute to our hip-hop and streetwear roots, from our classic Francos and Yellow-Gold chains to our more modern Rosaries and Supernatural chains. Our stable of men's hip hop chains typically come in three sizes--24", 30" and 36"--with five main color variants: Gold, Yellow-Gold, Rose-Gold, Blackout and Silver (Silver plated or Sterling Silver). And each hip hop chain color and size appeals to whatever outfit or night out you have planned, from our more conservative yellow-gold styles to our more eye-catching hip hop chains like our iced-out Pharaoh line. Whether its attention you seek or a style to complement your look, JT provides an array of men's hip hop chains in various widths (from as small as 1mm to as large as 20mm), sizes and colors for you to pick from.
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="article">
+                <div class="item">
+                    <div class="title">
+                        ABOUT JT
+                    </div>
+                </div>
+                <div class="description">
+                    <div>
+                        <h3>THE JT QUALITY
+                        </h3>
+                        <p>JT creates its hip hop chains, pendants, bracelets and earrings using the most cutting-edge technology in the industry to create hip hop jewelry that captures the spirit of the music we listen to and love. Our products come dipped 5 times in 14K or 18K gold or rhodium plating to prevent tarnishing, while our .925 sterling silver necklaces and pendants provide style--and quality—you can trust. With pendants and chains using hand-set CZ stones that come placed along a micro pave setting, and earrings using real diamonds, our products include the highest quality of materials. Our hip hop pendants, meanwhile, go through months of revisions and planning before ever reaching your doorstep. And all of our pendants forgo the use of traditional mold-based castings to redefine the standards of jewelry making, a standard that grants higher-quality jewelry with more intricate designs. Some jewelry manufacturers look to follow the standards, but at JT, we aim to define the standards of jewelry making. OUR PROMISE TO OUR CUSTOMERS At JT, our aim isn’t to sell you jewelry; our goal is to sell the most fashionable, iconic men's hip hop jewelry products on the market. You represent our jewelry, and we represent you. Because of this notion, we aim to foster relationships with our clients, via our social media accounts, through our customer support experience and through our products to give our loyal fans an experience that will be cherished and remembered.
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="article">
+                <div class="item">
+                    <div class="title">
+                        SHIPPING DETAILS
+                    </div>
+                </div>
+                <div class="description">
+                    <div>
+                        <h3>To provide a smooth internet shopping experience, KingIce ships orders every business day, Monday through Friday. That means your purchase will be in the mail within three business day after the payment is confirmed.
+                        </h3>
+                        <table>
+                            <thead>
+                                <tr>
+                                    <th>
+                                        Shipping Method
+                                    </th>
+                                    <th>
+                                        Price
+                                    </th>
+                                    <th>
+                                        Estimated Delivery Time
+                                    </th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>standart</td>
+                                    <td>7$</td>
+                                    <td>4-8 business days</td>
+                                </tr>
+                                <tr>
+                                    <td>express</td>
+                                    <td>12$</td>
+                                    <td>3-4 business days</td>
+                                </tr>
+                                <tr>
+                                    <td>2nd day air</td>
+                                    <td>26$</td>
+                                    <td>2 business days</td>
+                                </tr>
+                                <tr>
+                                    <td>overnight</td>
+                                    <td>40$</td>
+                                    <td>1 business day</td>
+                                </tr>
+                                <tr>
+                                    <th>international</th>
+                                    <th>price</th>
+                                    <th>estimated delivery time</th>
+                                </tr>
+                                <tr>
+                                    <td>standard</td>
+                                    <td>14$</td>
+                                    <td>4-20 business days</td>
+                                </tr>
+                                <tr>
+                                    <td>express</td>
+                                    <td>38$</td>
+                                    <td>3-4 business days</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+
+            <div class="article">
+                <div class="item">
+                    <div class="title">
+                        TERMS & CONDITIONS
+                    </div>
+                </div>
+                <div class="description">
+                    <div>
+                        </h3>
+                        <ul>TERMS & CONDITIONS
+                            <li>Shipments to Alaska, Hawaii, Virgin Islands and Puerto Rico may require additional payment.</li>
+                            <li>Express, 2nd Day Air, and Overnight shipments are NOT guaranteed.</li>
+                            <li>The shipping deadline for 2nd Day Air and Overnight shipments is 12 PM Pacific Time.</li>
+                            <li>Store credit may be issued for items out of stock. Refunds for out of stock items will be issued upon request.</li>
+                            <li>In the event that your order cannot be shipped, you will be contacted immediately by one of our customer service representative.</li>
+                            <li>Orders will be processed and shipped within 3 business days. JT is closed on weekend and all major holidays.</li>
+                            <li>You will receive an email confirmation with tracking information when your order is shipped.</li>
+                            <li>JT reserves the right to cancel any order that appears suspicious or fraudulent. All fraudulent transactions will be reported to proper authorities.</li>
+                            <ul>INTERNATIONAL SHIPMENTS
+                                <li>Free shipping promotions do not apply to international orders</li>
+                                <li>International orders over $300 are subject to review and may be cancelled</li>
+                                <li>Detailed tracking info is not available for standard international shipments.</li>
+                                <li>International shipments may be subject to customs brokerage fees, import duties, and taxes after the shipment reaches the destination country. Additional charges are the responsibility of the recipient. We have no control over these government imposed charges and cannot determine what they may be.</li>
+                            </ul>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- end of articles-->
+
+        <div class="footer fl4">
+            <i id="menu" class="fa fa-stack-exchange fa-lg">about</i>
+            <ul class="footer-nav">
+                <li><a href="http://instagram.com/jessee"><i class="fa fa-instagram fa-2x"></i></a></li>
+                <li><a href="http://vk.com/jessee"><i class="fa fa-vk fa-2x"></i></a></li>
+                <li><a href="http://facebook.com/jessee"><i class="fa fa-facebook fa-2x"></i></a></li>
+                <li><a href="http://youtube.com/jessee"><i class="fa fa-youtube fa-2x"></i></a></li>
+                <li><a href="http://twitter.com/jessee"><i class="fa fa-twitter fa-2x"></i></a></li>
+                <li><a href="http://tumblr.com/jessee"><i class="fa fa-tumblr fa-2x"></i></a></li>
+            </ul>
+            <div class="fp">
+                <p>Make transactions via <img src="images/icons/visa.png" alt="visa" />
+                    <img src="images/icons/l4594-mastercard-master-c-logo-66661.png" alt="master" /></p>
+                <p><i class="fa fa-phone fa-lg"></i> +390-99-4298-2921</p>
+                <p><i class="fa fa-creative-commons fa-lg"></i> 2015 Jewellery webBasket</p>
+                <p><i class="fa fa-chrome fa-lg"></i> Design by AndI</p>
+            </div>
+            <div class="fp2">
+                <p>Copyright © 2015 Sin City Tech - A Relight, Cypress Hill, South Carolina Web Design Development</p>
+                <p>All rights reserved. All trademarks referenced herein are the properties of their respective owners.</p>
+            </div>
+        </div>
+
+        <script src="ready/js/app.js"></script>
+</body>
+
+</html>
