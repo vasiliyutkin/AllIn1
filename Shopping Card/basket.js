@@ -1,59 +1,3 @@
-$(document).ready(function () {
-    //***********************************************************************
-    //modifying a DOM tree
-    $('.add-to-cart').click(function (event) {
-        event.preventDefault();
-        var name = $(this).attr('data-name');
-        var price = Number($(this).attr('data-price'));
-        shoppingCart.addItemToCart(name, price, 1);
-        displayCart();
-    });
-    $('#clear-cart').click(function () {
-        shoppingCart.clearCart();
-        displayCart();
-        shoppingCart.saveCart();
-    });
-
-    function displayCart() {
-        var cartArray = shoppingCart.listCart();
-        var output = '';
-        for (var i in cartArray) {
-            output += "<li>" + cartArray[i].name + " " + cartArray[i].count + " x " + cartArray[i].price + "$ = " + cartArray[i].total + "<a href='#' class='substract-item' data-name='" + cartArray[i].name + "'>    -</a>" + " <a class='plus-item' href='#' data-name='" + cartArray[i].name + "'>+</a>" + " <a class='delete-item' href='#' data-name='" + cartArray[i].name + "'>x</a>" + "</li>"
-        };
-        $('#show-cart').html(output);
-        $('#count-cart').html(shoppingCart.countCart());
-        $('#total-cart').html(shoppingCart.totalCart());
-    };
-    $('#show-cart').on('click', '.delete-item', function (event) {
-        event.preventDefault();
-        var name = $(this).attr('data-name');
-        shoppingCart.removeItemFromCartAll(name);
-        displayCart();
-    });
-    $('#show-cart').on('click', '.substract-item', function (event) {
-        event.preventDefault();
-        var name = $(this).attr('data-name');
-        shoppingCart.removeItemFromCart(name);
-        displayCart();
-    });
-    $('#show-cart').on('click', '.plus-item', function (event) {
-        event.preventDefault();
-        var name = $(this).attr('data-name');
-        shoppingCart.addItemToCart(name, 0, 1);
-        displayCart();
-    });
-    $('#bill').click(function (e) {
-        e.preventDefault();
-        humane.log('<strong>Your total bill is: ' + shoppingCart.totalCart() + '$! Thank you for your support! =)</strong>');
-        shoppingCart.clearCart();
-        shoppingCart.saveCart();
-        displayCart();
-    });
-
-    displayCart();
-});
-
-
 //************************************************************************
 // addItemToCart(name, price, count)
 // removeItemFromCart(name) -> remove 1 item from cart
@@ -76,10 +20,8 @@ $(document).ready(function () {
 // totalCart : Function
 // saveCart : Function
 // loadCart : Function
-
 var shoppingCart = (function () {
     //private methods and properties
-    var cart = [];
 
     function Item(name, price, count) {
         this.name = name;
@@ -167,7 +109,64 @@ var shoppingCart = (function () {
         }
         return cartCopy;
     };
-
     //--------------------------------------------------------------------
     return obj;
 })();
+if(parseInt(shoppingCart.totalCart()) == 0) {
+    var cart = [];
+}
+//***************************************************************************
+$(document).ready(function () {
+    //***********************************************************************
+    //modifying a DOM tree
+    $('.add-to-cart').click(function (event) {
+        event.preventDefault();
+        var name = $(this).attr('data-name');
+        var price = Number($(this).attr('data-price'));
+        shoppingCart.addItemToCart(name, price, 1);
+        displayCart();
+    });
+    $('#clear-cart').click(function () {
+        shoppingCart.clearCart();
+        displayCart();
+        shoppingCart.saveCart();
+    });
+
+    function displayCart() {
+        var cartArray = shoppingCart.listCart();
+        var output = '';
+        for (var i in cartArray) {
+            output += "<li>" + cartArray[i].name + " " + cartArray[i].count + " x " + cartArray[i].price + "$ = " + cartArray[i].total + "<a href='#' class='substract-item' data-name='" + cartArray[i].name + "'>    -</a>" + " <a class='plus-item' href='#' data-name='" + cartArray[i].name + "'>+</a>" + " <a class='delete-item' href='#' data-name='" + cartArray[i].name + "'>x</a>" + "</li>"
+        };
+        $('#show-cart').html(output);
+        $('#count-cart').html(shoppingCart.countCart());
+        $('#total-cart').html(shoppingCart.totalCart());
+    };
+    $('#show-cart').on('click', '.delete-item', function (event) {
+        event.preventDefault();
+        var name = $(this).attr('data-name');
+        shoppingCart.removeItemFromCartAll(name);
+        displayCart();
+    });
+    $('#show-cart').on('click', '.substract-item', function (event) {
+        event.preventDefault();
+        var name = $(this).attr('data-name');
+        shoppingCart.removeItemFromCart(name);
+        displayCart();
+    });
+    $('#show-cart').on('click', '.plus-item', function (event) {
+        event.preventDefault();
+        var name = $(this).attr('data-name');
+        shoppingCart.addItemToCart(name, 0, 1);
+        displayCart();
+    });
+    $('#bill').click(function (e) {
+        e.preventDefault();
+        humane.log('<strong>Your total bill is: ' + shoppingCart.totalCart() + '$! Thank you for your support! =)</strong>');
+        shoppingCart.clearCart();
+        shoppingCart.saveCart();
+        displayCart();
+    });
+
+    displayCart();
+});
