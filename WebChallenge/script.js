@@ -28,42 +28,42 @@ calc.addEventListener('click', function() {
     res.innerHTML = toCalc();
     res.style.borderBottom = '1px solid #2a2025';
     res.style.color = '#ba7d';
-    if (toCalc() < 18.5) {
+    if (toCalc() < 18.50) {
         trs[0].style.backgroundColor = '#ccc';
         trs[1].style.backgroundColor = '#fff';
         trs[2].style.backgroundColor = '#fff';
         trs[3].style.backgroundColor = '#fff';
         trs[4].style.backgroundColor = '#fff';
         trs[5].style.backgroundColor = '#fff';
-    } else if (toCalc() >= 18.5 && toCalc() < 24.9) {
+    } else if (toCalc() >= 18.50 && toCalc() < 24.99) {
         trs[0].style.backgroundColor = '#fff';
         trs[1].style.backgroundColor = '#ccc';
         trs[2].style.backgroundColor = '#fff';
         trs[3].style.backgroundColor = '#fff';
         trs[4].style.backgroundColor = '#fff';
         trs[5].style.backgroundColor = '#fff';
-    } else if (toCalc() >= 25 && toCalc() < 29.9) {
+    } else if (toCalc() >= 25.00 && toCalc() < 29.99) {
         trs[0].style.backgroundColor = '#fff';
         trs[1].style.backgroundColor = '#fff';
         trs[2].style.backgroundColor = '#ccc';
         trs[3].style.backgroundColor = '#fff';
         trs[4].style.backgroundColor = '#fff';
         trs[5].style.backgroundColor = '#fff';
-    } else if (toCalc() >= 30 && toCalc() < 34.9) {
+    } else if (toCalc() >= 30.00 && toCalc() < 34.99) {
         trs[0].style.backgroundColor = '#fff';
         trs[1].style.backgroundColor = '#fff';
         trs[2].style.backgroundColor = '#fff';
         trs[3].style.backgroundColor = '#ccc';
         trs[4].style.backgroundColor = '#fff';
         trs[5].style.backgroundColor = '#fff';
-    } else if (toCalc() >= 35 && toCalc() < 39.9) {
+    } else if (toCalc() >= 35.00 && toCalc() < 39.99) {
         trs[0].style.backgroundColor = '#fff';
         trs[1].style.backgroundColor = '#fff';
         trs[2].style.backgroundColor = '#fff';
         trs[3].style.backgroundColor = '#fff';
         trs[4].style.backgroundColor = '#ccc';
         trs[5].style.backgroundColor = '#fff';
-    } else if (toCalc() > 40) {
+    } else if (toCalc() > 40.00) {
         trs[0].style.backgroundColor = '#fff';
         trs[1].style.backgroundColor = '#fff';
         trs[2].style.backgroundColor = '#fff';
