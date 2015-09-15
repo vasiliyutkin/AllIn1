@@ -1,0 +1,59 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Weight calc</title>
+    <link rel="stylesheet" href="style.css"/>
+</head>
+<body>
+<!-- main flex container(for adding adaptivity to page)-->
+<div class="container">
+
+    <!-- inputs and labels for user's input data -->
+    <h4>Input parameters</h4>
+    <label for="height">Enter height</label>
+    <input type="text" id="height" placeholder="enter height in _SM" />
+    <label for="weight">Enter weight</label>
+    <input type="text" id="weight" placeholder="enter weight in _KG" />
+    <button name="calc" id="calc">calculate</button>
+    <p>Your body index is: <span id="result"></span></p>
+
+    <!-- TABLE -->
+    <table>
+        <tr>
+            <th>
+                Body weight index
+            </th>
+            <th>
+                Classification
+            </th>
+        </tr>
+        <tr class="table-tr">
+            <td>Lower then 18.5</td>
+            <td>Not enought weight</td>
+        </tr>
+        <tr class="table-tr">
+            <td>18.5 - 24.9</td>
+            <td>Normal</td>
+        </tr>
+        <tr class="table-tr">
+            <td>25 - 29.9</td>
+            <td>pre-fat</td>
+        </tr>
+        <tr class="table-tr">
+            <td>30 - 34.9</td>
+            <td>1st fat stage</td>
+        </tr>
+        <tr class="table-tr">
+            <td>35 - 39.9</td>
+            <td>2nd fat stage</td>
+        </tr>
+        <tr class="table-tr">
+            <td>more then 40</td>
+            <td>3rd fat stage</td>
+        </tr>
+    </table>
+</div>
+<script src="script.js"></script>
+</body>
+</html>
