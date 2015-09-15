@@ -348,9 +348,6 @@ ul {
         padding: 10px; }
 
 .footer {
-  position: absolute;
-  bottom: 0;
-  left: 0;
   color: #ffa571;
   border-top: 10px solid #ffa571;
   z-index: 1; }
@@ -465,7 +462,7 @@ i {
 .header,
 .sidebar,
 .footer {
-  background-image: url("http://localhost:63342/newProject/images/icons/hsf.png"); }
+  background-image: url("http://att.bbs.duowan.com/forum/month_1106/20110625_9160ac0f6b9cdc90ceb6SuHQeE1fC70Z.jpg"); }
 
 .header {
   display: -webkit-flex;
