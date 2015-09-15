@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Canvas</title>
+    <script src="RGraph.bar.js"></script>
+    <script src="RGraph.common.core.js"></script>
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+    <style>
+    body {
+        margin: 15px;
+        padding: 10px;
+        overflow: auto;
+    }
+    #canv {
+        background: #ffffff;
+    }
+    </style>
+</head>
+<body>
+<!-- Draw a graph on canvas-->
+<h1>RGraph Chart</h1>
+<canvas id="cvs" width="600" height="250" style="border: 1px solid #ccc">
+    [No canvas support]
+</canvas>
+
+<h1>SVG</h1>
+<svg width="300" height="300" id="svg">
+<!--circles-->
+  <circle cx="150" cy="150" r="110" stroke="#cccccc" stroke-width="7" fill="#ffffff" />
+<circle cx="150" cy="150" r="100" stroke="#cccccc" stroke-width="7" fill="#ffffff" />
+<!--lines1-->
+    <line x1="151" y1="51" x2="132" y2="147" rx="20" ry="20" style="stroke:#cccccc;stroke-width:7" />
+    <line x1="132" y1="147" x2="147" y2="159" rx="20" ry="20" style="stroke:#cccccc;stroke-width:7" />
+    <line x1="147" y1="159" x2="165" y2="148" rx="20" ry="20" style="stroke:#cccccc;stroke-width:7" />
+    <line x1="165" y1="148" x2="151" y2="51" rx="20" ry="20" style="stroke:#cccccc;stroke-width:7" />
+<!--lines2-->
+    <line x1="165" y1="148" x2="151" y2="51" rx="20" ry="20" style="stroke:#cccccc;stroke-width:7" />
+    <line x1="147" y1="160" x2="147" y2="176" rx="20" ry="20" style="stroke:#cccccc;stroke-width:7" />
+    <line x1="147" y1="176" x2="63" y2="199" rx="20" ry="20" style="stroke:#cccccc;stroke-width:7" />
+    <line x1="63" y1="199" x2="131" y2="150" rx="20" ry="20" style="stroke:#cccccc;stroke-width:7" />
+<!--lines3-->
+    <line x1="63" y1="199" x2="132" y2="147" rx="20" ry="20" style="stroke:#cccccc;stroke-width:7" />
+    <line x1="147" y1="176" x2="239" y2="200" rx="20" ry="20" style="stroke:#cccccc;stroke-width:7" />
+    <line x1="239" y1="200" x2="165" y2="148" rx="20" ry="20" style="stroke:#cccccc;stroke-width:7" />
+</svg>
+<h1>CANVAS</h1>
+    <canvas id="canv" width="300px" height="300px">Your browser don't support canvas</canvas>
+    <script>
+    //drawing mercedec logo on thecanvas
+    var canv = document.getElementById('canv');
+    var ctx = canv.getContext('2d');
+        ctx.strokeStyle="#a7aaa3";
+        ctx.lineWidth=7;
+        ctx.lineJoin="round";
+        ctx.beginPath();
+        ctx.arc(151, 151, 100, 0,2*Math.PI);
+        ctx.stroke();
+        ctx.beginPath();
+         ctx.arc(151, 151, 110, 0,2*Math.PI);
+        ctx.stroke();
+//lines1
+        ctx.beginPath();
+        ctx.moveTo(151, 51);
+        ctx.lineTo(132, 147);
+        ctx.lineTo(147, 159);
+        ctx.lineTo(165, 148);
+        ctx.stroke();
+        ctx.closePath();
+//lines2
+        ctx.beginPath();
+        ctx.moveTo(165, 148);
+        ctx.lineTo(151, 51);
+        ctx.moveTo(147, 160);
+        ctx.lineTo(147, 176);
+        ctx.moveTo(147, 176);
+        ctx.lineTo(63, 199);
+        ctx.stroke();
+        ctx.closePath();
+//lines3
+        ctx.beginPath();
+        ctx.moveTo(63, 199);
+        ctx.lineTo(132, 147);
+        ctx.moveTo(147, 176);
+        ctx.lineTo(239, 200);
+        ctx.moveTo(239, 200);
+        ctx.lineTo(165, 148);
+        ctx.stroke();
+        ctx.closePath();
+
+  //get position on the canvas
+    canv.addEventListener('click', getPos, true);
+    svg.addEventListener('click', getPos, true);
+    function getPos(e) {
+        var xPos, yPos;
+        xPos = e.clientX;
+        yPos = e.clientY;
+        alert(xPos + ' : ' + yPos);
+    };
+
+
+
+    //drawing a chart's
+    chart = 1;
+    ///draw a blue chart
+    function drawBar1 ()
+    {
+        var bar = new RGraph.Bar({
+            id: 'cvs',
+            data: [4,5,3,8,4,9,6,5,3],
+            options: {
+                colors: ['lightgreen'],
+                labels: ['Kobe', 'O\'neil', 'Johnson', 'Jeremy', 'Stuart', 'Duncan', 'Parker', 'Pharell', 'Wade'],
+                strokestyle: 'rgba(0,0,0,0)'
+            }
+        }).draw();
+    }
+
+///draw a red chart
+    function drawBar2 ()
+    {
+        var bar2 = new RGraph.Bar({
+            id: 'cvs',
+            data: [4,8,5,4,8,6,3,5,2],
+            colors: ['red'],
+            labels: ['Mal', 'Barry', 'Gary', 'Neil', 'Kim', 'Pete', 'Lou', 'Fred', 'Jobe'],
+            strokestyle: 'rgba(0,0,0,0)'
+        }).draw();
+    }
+// swap the function
+    function swap ()
+    {
+        $('#cvs').addClass('animated bounceOutLeft');
+        setTimeout(function ()
+        {
+            RGraph.Reset(document.getElementById("cvs"));
+
+            if (chart == 2) {
+                drawBar1();
+                chart = 1;
+            } else {
+                drawBar2();
+                chart = 2;
+            }
+
+            $('#cvs').removeClass('bounceOutLeft');
+            $('#cvs').addClass('bounceInLeft');
+        }, 750)
+    }
+
+    // start with a first chart
+    drawBar1();
+    chart = 1;
+    </script>
+</body>
+</html>

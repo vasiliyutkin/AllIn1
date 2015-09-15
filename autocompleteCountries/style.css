@@ -1,0 +1,20 @@
+#res, #res2 {
+    display: none;
+}
+label {
+    color: red;
+    font-size: 16px;
+    text-transform: uppercase;
+    margin: 10px;
+    padding: 10px;
+}
+input {
+    border-radius: 2em;
+    border: 1px solid blue;
+    margin: 10px;
+    padding: 10px;
+}
+input:focus {
+    width: 400px;
+    border: 2px solid red;
+}
