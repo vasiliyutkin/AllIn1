@@ -1,0 +1,24 @@
+{
+  "name": "angular",
+  "version": "0.1.0",
+  "description": "myProject",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "and1",
+  "license": "ISC",
+  "devDependencies": {
+    "coffee": "^1.2.0",
+    "coffee-script": "^1.10.0",
+    "event-stream": "^3.3.1",
+    "gulp": "^3.9.0",
+    "gulp-angular-filesort": "^1.1.1",
+    "gulp-coffee": "^2.3.1",
+    "gulp-htmlmin": "^1.2.0",
+    "gulp-inject": "^3.0.0",
+    "gulp-sass": "^2.0.4",
+    "main-bower-files": "^2.9.0",
+    "nodemon": "^1.7.1"
+  }
+}
