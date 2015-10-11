@@ -1,0 +1,347 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html>
+<head>
+	<script src="jquery-1.9.0.min.js"></script>
+    <script type="text/javascript">
+        function AddLocationRow() {
+            var rc = $("#locationsTable tbody tr").length;
+
+            var block = '<tr><td><input name="locationsTable:' + rc + ':locationNum" maxlength="10" size="2"></td>'
+                    + '<td><input name="locationsTable:' + rc + ':_id76" maxlength="40" size="40"></td>'
+                    + '<td><input name="locationsTable:' + rc + ':_id78" maxlength="80" size="30"></td>'
+                    + '<td><input name="locationsTable:' + rc + ':_id80" maxlength="2" size="1"></td>'
+                    + '<td><input name="locationsTable:' + rc + ':_id83" maxlength="5" size="5">-<input name="locationsTable:0:_id85" maxlength="4" size="4"></td></tr>';
+
+            $(block).appendTo($("#locationsTable tbody"));
+        }
+
+        function toggleExpMod() {
+            if ($('#ExpModCustCA\\[0\\]').is(":checked")) {
+                $('#ExpModPlaceholder').append('<input id="ExperienceModificationCustCA" tabindex="10" name="ExperienceModificationCustCA" maxlength="5" value="" size="6" type="text" autocomplete="off">');
+                $("#ExperienceModificationCustCABlock").show();
+            }
+            else {
+                $("#ExperienceModificationCustCABlock").hide();
+                $('#ExperienceModificationCustCA').remove();
+            }
+
+        }
+    </script>
+    <style type="text/css">
+        .formRow
+        {
+            margin: 5px
+        }
+        .selectListContainer
+        {
+            display: inline;
+        }
+    </style>
+</head>
+
+<body>
+Top of page
+
+<form name="WCGeneralInfo" id="WCGeneralInfo" method="post">
+    <fieldset class="standardForm " id="InsuredInfo">
+        <legend>Insured Information</legend>
+
+        <div class="formRow ">
+            <label for="InsuredOrPrincipal[InsuredOrPrincipalInfo.InsuredOrPrincipalRoleCd='Insured'].GeneralPartyInfo.NameInfo.CommlName.CommercialName" id="InsuredOrPrincipal[InsuredOrPrincipalInfo.InsuredOrPrincipalRoleCd='Insured'].GeneralPartyInfo.NameInfo.CommlName.CommercialName_label">
+                <span id="InsuredOrPrincipal[InsuredOrPrincipalInfo.InsuredOrPrincipalRoleCd='Insured'].GeneralPartyInfo.NameInfo.CommlName.CommercialName_requiredIndicator"><span class="requiredField">*</span></span>
+                <span id="InsuredOrPrincipal[InsuredOrPrincipalInfo.InsuredOrPrincipalRoleCd='Insured'].GeneralPartyInfo.NameInfo.CommlName.CommercialName_labelText">First Named Insured</span>
+            </label>
+				<span>
+					<input class="inp" type="text" name="InsuredOrPrincipal[InsuredOrPrincipalInfo.InsuredOrPrincipalRoleCd='Insured'].GeneralPartyInfo.NameInfo.CommlName.CommercialName" autocomplete="off" id="InsuredOrPrincipal[InsuredOrPrincipalInfo.InsuredOrPrincipalRoleCd='Insured'].GeneralPartyInfo.NameInfo.CommlName.CommercialName" size="80" maxlength="80" value="" />
+				</span>
+            <span id="InsuredOrPrincipal[InsuredOrPrincipalInfo.InsuredOrPrincipalRoleCd='Insured'].GeneralPartyInfo.NameInfo.CommlName.CommercialName_fieldHelpers"></span>
+        </div>
+        <div class="formRow ">
+            <label for="InsuredOrPrincipal[InsuredOrPrincipalInfo.InsuredOrPrincipalRoleCd='Insured'].GeneralPartyInfo.NameInfo.CommlName.SupplementaryNameInfo[SupplementaryNameCd='DBA'].SupplementaryName" id="InsuredOrPrincipal[InsuredOrPrincipalInfo.InsuredOrPrincipalRoleCd='Insured'].GeneralPartyInfo.NameInfo.CommlName.SupplementaryNameInfo[SupplementaryNameCd='DBA'].SupplementaryName_label">
+                <span id="InsuredOrPrincipal[InsuredOrPrincipalInfo.InsuredOrPrincipalRoleCd='Insured'].GeneralPartyInfo.NameInfo.CommlName.SupplementaryNameInfo[SupplementaryNameCd='DBA'].SupplementaryName_requiredIndicator"></span>
+                <span id="InsuredOrPrincipal[InsuredOrPrincipalInfo.InsuredOrPrincipalRoleCd='Insured'].GeneralPartyInfo.NameInfo.CommlName.SupplementaryNameInfo[SupplementaryNameCd='DBA'].SupplementaryName_labelText">Doing Business As</span>
+            </label>
+				<span>
+					<input class="inp" type="text" name="InsuredOrPrincipal[InsuredOrPrincipalInfo.InsuredOrPrincipalRoleCd='Insured'].GeneralPartyInfo.NameInfo.CommlName.SupplementaryNameInfo[SupplementaryNameCd='DBA'].SupplementaryName" autocomplete="off" id="InsuredOrPrincipal[InsuredOrPrincipalInfo.InsuredOrPrincipalRoleCd='Insured'].GeneralPartyInfo.NameInfo.CommlName.SupplementaryNameInfo[SupplementaryNameCd='DBA'].SupplementaryName" size="50" maxlength="50" value="" />
+				</span>
+            <span id="InsuredOrPrincipal[InsuredOrPrincipalInfo.InsuredOrPrincipalRoleCd='Insured'].GeneralPartyInfo.NameInfo.CommlName.SupplementaryNameInfo[SupplementaryNameCd='DBA'].SupplementaryName_fieldHelpers"></span>
+        </div>
+        <div class="formRow ">
+            <label for="PolicyEffectiveDt" id="PolicyEffectiveDt_label">
+                <span id="PolicyEffectiveDt_requiredIndicator"><span class="requiredField">*</span></span>
+                <span id="PolicyEffectiveDt_labelText">Effective Date</span>
+            </label>
+				<span>
+					<input type="text" class="inp" name="PolicyEffectiveDt" autocomplete="off" id="PolicyEffectiveDt" size="10" maxlength="10" value="" />
+				</span>
+				<span id="PolicyEffectiveDt_fieldHelpers">
+					<a id="PolicyEffectiveDt_fieldHelperCalendar" class="fieldHelperCalendar " href="javascript:void(0);" onclick="windowXPosition = false; windowYPosition = false; showCalendar('PolicyEffectiveDt', 'MM-DD-YYYY', '', '', null, '[&quot;January&quot;,&quot;February&quot;,&quot;March&quot;,&quot;April&quot;,&quot;May&quot;,&quot;June&quot;,&quot;July&quot;,&quot;August&quot;,&quot;September&quot;,&quot;October&quot;,&quot;November&quot;,&quot;December&quot;]', '[&quot;Sun&quot;,&quot;Mon&quot;,&quot;Tue&quot;,&quot;Wed&quot;,&quot;Thu&quot;,&quot;Fri&quot;,&quot;Sat&quot;]');"></a>
+					<a id="PolicyEffectiveDt_fieldHelperBalloon" class="fieldHelperBalloon " href="javascript:void(0);" onclick="return overlib('Please enter the policy effective date here.  Date format required is MM-DD-YYYY.', WIDTH, 200);"></a>
+				</span>
+        </div>
+        <div class="formRow ">
+            <label for="YIB" id="YIB_label">
+                <span id="YIB_requiredIndicator"><span class="requiredField">*</span></span>
+                <span id="YIB_labelText">Years in Business</span>
+            </label>
+				<span>
+					<input type="text" class="inp" name="YIB" autocomplete="off" id="YIB" size="4" maxlength="4" value="" />
+				</span>
+				<span id="YIB_fieldHelpers">
+					<a id="YIB_fieldHelperBalloon" class="fieldHelperBalloon " href="javascript:void(0);" onclick="return overlib('If less than one year, please enter zero.  Must be less than 100.', WIDTH, 200);"></a>
+				</span>
+        </div>
+        <div class="formRow ">
+            <label for="LegalEntity" id="LegalEntity_label">
+                <span id="LegalEntity_requiredIndicator"><span class="requiredField">*</span></span>
+                <span id="LegalEntity_labelText">Legal Entity</span>
+            </label>
+				<span>
+					<div class="selectListContainer">
+                        <select name="LegalEntity" id="LegalEntity">
+                            <option value="" selected>Select One</option>
+                            <option value="SS">Subchapter S Corporation</option>
+                            <option value="LL">Limited Liability Company</option>
+                            <option value="NP">Not for Profit Organization</option>
+                            <option value="PT">Partnership</option>
+                            <option value="SolePrp">Sole Proprietor</option>
+                            <option value="CP">Corporation</option>
+                            <option value="TR">Trust</option>
+                        </select>
+                    </div>
+				</span>
+        </div>
+        <div class="formRow ">
+            <label for="InsuredOrPrincipal[InsuredOrPrincipalInfo.InsuredOrPrincipalRoleCd='Insured'].GeneralPartyInfo.NameInfo.TaxIdentity[TaxIdTypeCd='FEIN'].TaxId" id="InsuredOrPrincipal[InsuredOrPrincipalInfo.InsuredOrPrincipalRoleCd='Insured'].GeneralPartyInfo.NameInfo.TaxIdentity[TaxIdTypeCd='FEIN'].TaxId_label">
+                <span id="InsuredOrPrincipal[InsuredOrPrincipalInfo.InsuredOrPrincipalRoleCd='Insured'].GeneralPartyInfo.NameInfo.TaxIdentity[TaxIdTypeCd='FEIN'].TaxId_requiredIndicator"><span class="requiredField">*</span></span>
+                <span id="InsuredOrPrincipal[InsuredOrPrincipalInfo.InsuredOrPrincipalRoleCd='Insured'].GeneralPartyInfo.NameInfo.TaxIdentity[TaxIdTypeCd='FEIN'].TaxId_labelText">FEIN</span>
+            </label>
+				<span>
+					<input type="text" class="inp" name="InsuredOrPrincipal[InsuredOrPrincipalInfo.InsuredOrPrincipalRoleCd='Insured'].GeneralPartyInfo.NameInfo.TaxIdentity[TaxIdTypeCd='FEIN'].TaxId" autocomplete="off" id="InsuredOrPrincipal[InsuredOrPrincipalInfo.InsuredOrPrincipalRoleCd='Insured'].GeneralPartyInfo.NameInfo.TaxIdentity[TaxIdTypeCd='FEIN'].TaxId" size="9" maxlength="9" value="" />
+				</span>
+            <span id="InsuredOrPrincipal[InsuredOrPrincipalInfo.InsuredOrPrincipalRoleCd='Insured'].GeneralPartyInfo.NameInfo.TaxIdentity[TaxIdTypeCd='FEIN'].TaxId_fieldHelpers"></span>
+        </div>
+        <div class="formRow ">
+            <label for="insuredEmailAddr" id="insuredEmailAddr_label">
+                <span id="insuredEmailAddr_requiredIndicator"></span>
+                <span id="insuredEmailAddr_labelText">Insured E-Mail</span>
+            </label>
+				<span>
+					<input type="text" class="inp" name="insuredEmailAddr" autocomplete="off" id="insuredEmailAddr" size="50" maxlength="50" value="" />
+				</span>
+            <span id="insuredEmailAddr_fieldHelpers"></span>
+        </div>
+    </fieldset>
+
+    <fieldset class="standardForm " id="ExpMod_CA">
+
+        <legend>Experience Modification</legend>
+        <div class="formRow ">
+            <label id="WorkCompLineBusiness.WorkCompRateState.StateProvCd_label" for="WorkCompLineBusiness.WorkCompRateState.StateProvCd">
+                <span style="display: none;" id="WorkCompLineBusiness.WorkCompRateState.StateProvCd_requiredIndicator"></span>
+                <span id="WorkCompLineBusiness.WorkCompRateState.StateProvCd_labelText">State</span>
+            </label>
+				<span>
+					<span class="readonly">CA</span><input style="display: none;" id="WorkCompLineBusiness.WorkCompRateState.StateProvCd" tabindex="1011" name="WorkCompLineBusiness.WorkCompRateState.StateProvCd" maxlength="80" value="CA" size="20" type="text" autocomplete="off">
+				</span>
+            <span style="display: none;" id="WorkCompLineBusiness.WorkCompRateState.StateProvCd_fieldHelpers"></span>
+        </div>
+        <div class="formRow">
+            <div class="radioSet">
+					<span id="ExpModCustCA_label" class="label">
+						<span id="ExpModCustCA_requiredIndicator" class="requiredField"><span class="requiredField">*</span></span>
+						<span id="ExpModCustCA_labelText">Is the account experience rated?</span>
+					</span>
+					<span>
+						<span class="options">
+							<label for="ExpModCustCA[0]">Yes<input id="ExpModCustCA[0]" onchange="setTimeout('toggleExpMod();', 1000)" class="radio" tabindex="8" name="ExpModCustCA" value="1" type="radio"></label>
+							<label for="ExpModCustCA[1]">No<input id="ExpModCustCA[1]" onchange="setTimeout('toggleExpMod();', 1000)" checked="checked" class="radio" tabindex="9" name="ExpModCustCA" value="0" type="radio"></label>
+						</span>
+					</span>
+                <span id="ExpModCustCA_fieldHelpers"></span>
+            </div>
+        </div>
+        <div class="formRow " id="ExperienceModificationCustCABlock" style="display: none">
+            <label id="ExperienceModificationCustCA_label" for="ExperienceModificationCustCA_label">
+                <span id="ExperienceModificationCustCA_requiredIndicator" class="requiredField"><span class="requiredField">*</span></span>
+                <span id="ExperienceModificationCustCA_labelText">Experience Modification</span>
+            </label>
+				<span id="ExpModPlaceholder">
+
+				</span>
+				<span id="ExperienceModificationCustCA_fieldHelpers">
+					<a id="ExperienceModificationCustCA_fieldHelperBalloon" class="fieldHelperBalloon " onclick="return overlib('Please enter a value between 10-500.', WIDTH, 200);" href="javascript:void(0);"></a>
+				</span>
+        </div>
+        <input id="TypeOfModCustCA" class="inp" tabindex="1012" name="TypeOfModCustCA" value="FIN" type="hidden">
+    </fieldset>
+    <fieldset class="standardForm " id="LocationsInfo">
+        <legend>Locations</legend>
+        <table class="TabularInput" id="locationsTable" border="0" cellspacing="0" cellpadding="0">
+            <thead sizset="0" sizcache021782808884462185="2">
+            <tr>
+                <th class="Data Left"><span class="RequiredFieldMarker">*</span>Loc #</th>
+                <th class="Data Left"><span class="RequiredFieldMarker">*</span>Street</th>
+                <th class="Data Left"><span class="RequiredFieldMarker">*</span>City</th>
+                <th class="Data Left"><span class="RequiredFieldMarker">*</span>State</th>
+                <th class="Data Left"><span class="RequiredFieldMarker">*</span>Zip Code</th>
+            </tr>
+            </thead>
+            <tbody sizset="1" sizcache021782808884462185="2">
+            <tr>
+                <td>
+                    <input class="inp" name="locationsTable:0:locationNum" maxlength="10" size="2"></td>
+                <td>
+                    <input class="inp" name="locationsTable:0:_id76" maxlength="40" size="40"></td>
+                <td>
+                    <input class="inp" name="locationsTable:0:_id78" maxlength="80" size="30"></td>
+                <td>
+                    <input class="inp" name="locationsTable:0:_id80" maxlength="2" size="1"></td>
+                <td><input class="inp" name="locationsTable:0:_id83" maxlength="5" size="5">-
+                    <input class="inp" name="locationsTable:0:_id85" maxlength="4" size="4">
+                </td>
+            </tr>
+            <tfoot sizset="3" sizcache021782808884462185="2">
+            <tr>
+                <td class="Actions Left" colspan="6">
+								<span id="locationsTable:locationsAddAnother">
+									<a id="locationsAddAnother" class="Button" tabindex="60" onclick="AddLocationRow();return false;" href="#">Add another</a></span>
+                </td>
+            </tr>
+            </tfoot>
+        </table>
+    </fieldset>
+</form>
+	<button id="FillPage">Fill page</button>
+	
+	<div>
+		<p>Changes log</p>
+		<p id="trackedChanges" style="display: block"></p>
+
+	</div>
+    <!--<script type="text/javascript" src="myJS.js"></script>-->
+	<script type="text/javascript">
+		var items = {
+			InsuredName: 'Perfect customer',
+			DBA: 'PERF Co',
+			EffectiveDate: '05/05/2013',
+			YIB: '4',
+			Entity: 'corporation',
+			FEIN: '987654321',
+			Email: 'perfect@perfect.com',
+			ExpMod: '0.98', //could be empty
+			locations: [{
+				locNum: '1',
+				Street: '111 Main Str',
+				City: 'Los Angeles',
+				State: 'CA',
+				Zip: '90012 - 1234'
+			},
+			{
+				locNum: '2',
+				Street: '222 Main Str',
+				City: 'Los Angeles',
+				State: 'CA',
+				Zip: '90012'
+			},
+			{
+				locNum: '3',
+				Street: '333 Main Str',
+				City: 'Los Angeles',
+				State: 'CA',
+				Zip: '90012'
+			}
+			]
+		};
+
+		//getting button ID and add listener for it
+		var fill = document.getElementById('FillPage');
+        fill.addEventListener('click', function() {
+            var inp1 = document.getElementsByTagName('input')[0];
+                inp1.value = items.InsuredName;
+            var inp2 = document.getElementsByTagName('input')[1];
+                inp2.value = items.DBA;
+            var inp3 = document.getElementsByTagName('input')[2];
+                inp3.value = items.EffectiveDate;
+            var inp4 = document.getElementsByTagName('input')[3];
+                inp4.value = items.YIB;
+            var inp5 = document.getElementsByTagName('select')[0];
+                inp5.value = 'CP';
+            var inp6 = document.getElementsByTagName('input')[4];
+                inp6.value = items.FEIN;
+            var inp7 = document.getElementsByTagName('input')[5];
+                inp7.value = items.Email;
+            var inp8 = document.getElementsByTagName('input')[10];
+                inp8.value = items.locations[0].locNum;
+            var inp9 = document.getElementsByTagName('input')[11];
+                inp9.value = items.locations[0].Street;
+            var inp10 = document.getElementsByTagName('input')[12];
+                inp10.value = items.locations[0].City;
+            var inp11 = document.getElementsByTagName('input')[13];
+                inp11.value = items.locations[0].State;
+            var inp12 = document.getElementsByTagName('input')[14];
+                inp12.value = items.locations[0].Zip.split('').splice(0,5).join('');
+            var inp13 = document.getElementsByTagName('input')[15];
+                inp13.value = items.locations[0].Zip.split('').splice(8, 4).join('');
+            //adding another input listener
+            window.onload = myFunc();
+            function myFunc(){
+                //Look for a form element on the page
+                if(document.all)
+                {
+                    //IE and Chrome
+                    var ArrayOfForms = document.all.tags("form");
+                }
+                else
+                {
+                    //FF
+                    var ArrayOfForms = document.getElementsByTagName("body")[0].getElementsByTagName("form");
+                }
+                var FormCount = ArrayOfForms.length;
+                for(var i=0; i < FormCount; i++)
+                {
+                    var ArrayOfInputs = ArrayOfForms[i].getElementsByTagName("input");
+                    var InputCount = ArrayOfInputs.length;
+                    for(var z=0; z < InputCount; z++)
+                    {
+                        //Foreach input within each form, create an "onchange" listener
+                        if(ArrayOfInputs[z].type != "submit")
+                        {
+                            ArrayOfInputs[z].addEventListener('keyup', function(e){verifyInput(this.id)}, false);
+                        }
+                    }
+                }
+            }
+            function verifyInput() {
+                var changes = document.getElementById('trackedChanges');
+                changes.innerHTML = document.getElementsByTagName('span')[2].innerHTML +' : ' + items.InsuredName + ' <strong>CHANGED TO</strong>  ' + inp1.value + '<br/>' +
+                        document.getElementsByTagName('span')[6].innerHTML +' : ' + items.DBA + ' <strong>CHANGED TO</strong>  ' + inp2.value + '<br/>' +
+                        document.getElementsByTagName('span')[11].innerHTML +' : ' + items.EffectiveDate + ' <strong>CHANGED TO</strong>  ' + inp3.value +  '<br/>' +
+                        document.getElementsByTagName('span')[16].innerHTML +' : ' + items.YIB + ' <strong>CHANGED TO</strong>  ' + inp4.value +  '<br/>' +
+                        document.getElementsByTagName('span')[21].innerHTML +' : ' + items.Entity + ' <strong>CHANGED TO</strong>  ' + inp5.value +  '<br/>' +
+                        document.getElementsByTagName('span')[25].innerHTML +' : ' + items.FEIN + ' <strong>CHANGED TO</strong>  ' + inp6.value +  '<br/>' +
+                        document.getElementsByTagName('span')[29].innerHTML +' : ' + items.Email + ' <strong>CHANGED TO</strong>  ' + inp7.value +  '<br/>' +
+                        document.getElementsByTagName('th')[0].innerHTML +' : ' + items.locations[0].locNum + ' <strong>CHANGED TO</strong>  ' + inp8.value +  '<br/>' +
+                        document.getElementsByTagName('th')[1].innerHTML +' : ' + items.locations[0].Street + ' <strong>CHANGED TO</strong>  ' + inp9.value +  '<br/>' +
+                        document.getElementsByTagName('th')[2].innerHTML +' : ' + items.locations[0].City + ' <strong>CHANGED TO</strong>  ' + inp10.value +  '<br/>' +
+                        document.getElementsByTagName('span')[33].innerHTML +' : ' + items.locations[0].State + ' <strong>CHANGED TO</strong>  ' + inp11.value +  '<br/>' +
+                        document.getElementsByTagName('th')[4].innerHTML +'_1 : ' + items.locations[0].Zip.split('').splice(0,5).join('') + ' <strong>CHANGED TO</strong>  ' + inp12.value +  '<br/>' +
+                        document.getElementsByTagName('th')[4].innerHTML +'_2 : ' + items.locations[0].Zip.split('').splice(8, 4).join('') + ' <strong><strong>CHANGED TO</strong> </strong> ' + inp13.value +  '<br/>';
+                changes.style.border = '3px solid #0f0';
+                document.getElementsByTagName('p')[0].innerHTML = 'some fields have changed!!';
+
+            }
+        });
+	</script>
+<style>
+    #trackedChanges {
+        color: #1a1a1a;
+        border-radius: 10px;
+        padding: 15px;
+        margin: 20px auto;
+        width: 800px;
+    }
+</style>
+</body>
+</html>

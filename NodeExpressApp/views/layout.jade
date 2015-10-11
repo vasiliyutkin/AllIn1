@@ -1,0 +1,19 @@
+doctype
+head
+	title= page
+	meta(charset="utf-8")
+	link(rel='stylesheet' href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css")
+	style 
+		|ul.nav a {
+		|	text-transform: uppercase;
+		|}
+body
+	.container
+		h1= page
+		hr
+		ul.nav.nav-pills
+			li: a(href="hello.html") Start page
+			each link in links
+				li: a(href=link)= link
+			li: a(href="new") New
+		block content

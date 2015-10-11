@@ -1,0 +1,75 @@
+.container { /* main flex container */
+    display: flex;
+    margin: 10px auto;
+    flex-flow: column nowrap;
+    align-content: center;
+    align-items: center;
+    border: 4px solid #465761;
+    border-radius: 3px;
+    max-width: 500px;
+    max-height: 800px;
+}
+table { /* table */
+    text-transform: lowercase;
+    font-family: 'Arial', sans-serif;
+    font-weight: 500;
+    display: table;
+    text-align: center;
+    color: black;
+    background: white;
+    padding: 15px;
+    margin: 20px;
+}
+table tr, table td { /* table tr, td */
+    border: 1px solid #333;
+    padding: 15px;
+    margin: 10px;
+}
+table th { /* styles for table th */
+    background: #555;
+    color: white;
+    text-transform: capitalize;
+    padding: 15px;
+    margin: 10px;
+}
+label { /* label of inputs styles */
+    color: #555555;
+    text-transform: uppercase;
+    text-align: center;
+    padding: 10px;
+}
+input { /* input styles */
+    padding: 7px;
+    margin: 10px;
+}
+h4 {
+   color: #777;
+   text-align: center;
+   text-transform: uppercase;
+   font-variant: small-caps;
+   font-weight: bold;
+}
+input:focus { /* input focus styles */
+    border: 3px solid lightcoral;
+    border-radius: 4px;
+}
+button { /* button styles */
+    color: #fff;
+    border-radius: 4px;
+    background: #555;
+    text-transform: uppercase;
+    font-variant: small-caps;
+    padding: 10px;
+    cursor: pointer;
+    -webkit-box-shadow: 3px 3px 5px 1px #465761;
+    -moz-box-shadow: 3px 3px 5px 1px #465761;
+    box-shadow: 3px 3px 5px 1px #465761;
+}
+button:active { /* active button styles */
+    -webkit-box-shadow: 4px 4px 6px 2px #465761;
+    -moz-box-shadow: 4px 4px 6px 2px #465761;
+    box-shadow: 4px 4px 6px 2px #465761;
+    border: 2px solid #555;
+    font-weight: bold;
+    font-variant: small-caps;
+}

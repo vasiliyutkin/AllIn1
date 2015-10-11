@@ -1,0 +1,20 @@
+[{
+    "sort": "apple",
+    "price": 100
+}, {
+    "sort": "android",
+    "price": 200
+}, {
+    "sort": "linux",
+    "price": 300
+}, {
+    "sort": "mac",
+    "price": 400
+}, {
+    "sort": "winMobile",
+    "price": 500
+},
+{
+    "sort": "Lumia",
+    "price": 30
+}]
