@@ -1,0 +1,15 @@
+{
+  "mongoose": {
+    "options": {
+      "debug": true,
+      "server": {
+        "socketOptions": {
+          "keepAlive": 1
+        }
+      }
+    }
+  },
+  "logger": {
+    "format": "dev"
+  }
+}
