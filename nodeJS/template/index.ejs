@@ -1,0 +1,19 @@
+<% layout('layout/page') -%>
+<% block('title', "ExpressChat") -%>
+
+<h1 class='panel-heading label label-info'>I used listed technologies to create this Chat</h1>
+
+<ul class="list-group">
+  <li class='list-group-item'>NConf configuration</li>
+  <li class='list-group-item'>ExpressJS</li>
+  <li class='list-group-item'>EJS template engine (partials, helpers, layouts), (also I know Jade TE /=)/ )</li>
+  <li class='list-group-item'>Authorization & sessions maded by Connect</li>
+  <li class='list-group-item'>secured services and pages (for authorized users)</li>
+  <li class='list-group-item'>COMET (Sock.JS, Socet.IO, WS.js)</li>
+  <li class='list-group-item'>Worked with database MongoDB (Mongoose)</li>
+  <li class='list-group-item'>Async library</li>
+</ul>
+
+
+<h3 class="label label-success">Current Time</h3>
+<%=helpers.now()%>
