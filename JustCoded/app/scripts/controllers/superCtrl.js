@@ -1,123 +1,32 @@
-angular.module('superPowers')
-    .controller('superCtrl', function($scope, $localStorage, $location) {
-        $scope.loadState = function() {
-            $scope.data = $localStorage.data || [];
+(function() {
+    'use strict';
+
+    angular.module('superPowers')
+        .controller('superCtrl', superCtrl);
+
+    function superCtrl($scope, $location, $localStorage, counter) {
+        /**********************************************
+        local methods to work with localStorage service
+        ***********************************************/
+        $scope.saveState = saveState;
+        $scope.loadState = loadState;
+        $scope.loadState();
+
+        function saveState() {
+            return $localStorage.data = $scope.data;
         };
 
-        $scope.data = $localStorage.data || [];
-
-
-        //Blocking state routing function
-        $scope.handler = function() {
-            $scope.$watch('$scope.data[i].superpower', function() {
-                $scope.toggleS = 'disabled';
-                for (var i = 0; i < $scope.data.length; i++) {
-                    if ($scope.data[i].superpower === true) {
-                        $scope.toggleS = 'enabled';
-                    }
-                }
-            });
-
-            $scope.$watch('$scope.data[i].superpower', function() {
-                $scope.toggleR = 'disabled';
-                for (var i = 0; i < $scope.data.length; i++) {
-                    if ($scope.data[i].rich === true) {
-                        $scope.toggleR = 'enabled';
-                    }
-                }
-            });
-            $scope.$watch('$scope.data[i].superpower', function() {
-                $scope.toggleG = 'disabled';
-                for (var i = 0; i < $scope.data.length; i++) {
-                    if ($scope.data[i].genious === true) {
-                        $scope.toggleG = 'enabled';
-                    }
-                }
-            });
+        function loadState() {
+            return $scope.data = $localStorage.data || [];
         };
 
-        $scope.hideConfirm = function(index) {
-            $scope.data[index].confirm = !$scope.data[index].confirm;
-            for (var i = 0; i < $scope.data.length; i++) {
-                if (i !== index) {
-                    $scope.data[i].confirm = false;
-                }
-            }
-        };
+        /********************************************
+                   our apps CRUD operations
+        ********************************************/
+        $scope.addPerson = addPerson;
+        $scope.deletePerson = deletePerson;
 
-        $scope.changeRouteS = function() {
-            $scope.superpower = true;
-            $scope.rich = false;
-            $scope.genious = false;
-        };
-        $scope.changeRouteR = function() {
-            $scope.superpower = false;
-            $scope.rich = true;
-            $scope.genious = false;
-        };
-        $scope.changeRouteG = function() {
-            $scope.superpower = false;
-            $scope.rich = false;
-            $scope.genious = true;
-        };
-
-        if ($location.path("/")) {
-            $scope.superpower = false;
-            $scope.rich = false;
-            $scope.genious = false;
-        } else if ($location.path("/super")) {
-            $scope.superpower = true;
-            $scope.rich = false;
-            $scope.genious = false;
-        } else if ($location.path("/rich")) {
-            $scope.superpower = false;
-            $scope.rich = true;
-            $scope.genious = false;
-        } else if ($location.path("/genious")) {
-            $scope.superpower = false;
-            $scope.rich = false;
-            $scope.genious = true;
-        }
-
-        //location routing for superPower
-        $scope.$watch('superpower', function() {
-            if (!$scope.superpower) {
-                return $location.path("/");
-            }
-        });
-        //location routing for Rich
-        $scope.$watch('rich', function() {
-            if (!$scope.rich) {
-                return $location.path("/");
-            }
-        });
-        //location routing for Genious
-        $scope.$watch('genious', function() {
-            if (!$scope.genious) {
-                return $location.path("/");
-            }
-        });
-
-
-
-        $scope.predicate = 'name';
-        $scope.reverse = true;
-        $scope.order = function(predicate) {
-            $scope.reverse = ($scope.predicate === predicate) ? !$scope.reverse : false;
-            $scope.predicate = predicate;
-        };
-
-        $scope.byS = {
-            superpower: true
-        };
-        $scope.byR = {
-            rich: true
-        };
-        $scope.byG = {
-            genious: true
-        };
-
-        $scope.addPerson = function() {
+        function addPerson() {
             if (!$scope.name) {
                 return false;
             } else if ($scope.name) {
@@ -140,42 +49,118 @@ angular.module('superPowers')
             $scope.genious = false;
         };
 
-        $scope.deletePerson = function(index) {
+        function deletePerson(index) {
             $scope.data.splice(index, 1);
         };
 
-        $scope.countSuper = function() {
-            var counter = 0;
+        /******************************************
+                      count functions
+        *******************************************/
+        $scope.countSuper = counter.super;
+        $scope.countRich = counter.rich;
+        $scope.countGenious = counter.genious;
+
+        /************************************
+            Blocking state routing function
+        *************************************/
+        $scope.handler = handler;
+
+        function handler() {
+            $scope.$watch('data[i].superpower', function() {
+                $scope.toggleS = 'disabled';
+                for (var i = 0; i < $scope.data.length; i++) {
+                    if ($scope.data[i].superpower === true) {
+                        $scope.toggleS = 'enabled';
+                    }
+                }
+            });
+            $scope.$watch('data[i].rich', function() {
+                $scope.toggleR = 'disabled';
+                for (var i = 0; i < $scope.data.length; i++) {
+                    if ($scope.data[i].rich === true) {
+                        $scope.toggleR = 'enabled';
+                    }
+                }
+            });
+            $scope.$watch('data[i].genious', function() {
+                $scope.toggleG = 'disabled';
+                for (var i = 0; i < $scope.data.length; i++) {
+                    if ($scope.data[i].genious === true) {
+                        $scope.toggleG = 'enabled';
+                    }
+                }
+            });
+        };
+
+        /********************************************************
+                    deletion popUp message toggler
+        *********************************************************/
+        $scope.hideConfirm = hideConfirm;
+
+        function hideConfirm(index) {
             for (var i = 0; i < $scope.data.length; i++) {
-                if ($scope.data[i].superpower === true) {
-                    counter++;
+                $scope.data[i].confirm = !$scope.data[i].confirm;
+                if (i !== index) {
+                    $scope.data[i].confirm = false;
                 }
             }
-            return counter;
         };
 
-        $scope.countRich = function() {
-            var counter = 0;
-            for (var i = 0; i < $scope.data.length; i++) {
-                if ($scope.data[i].rich === true) {
-                    counter++;
+        /**************************************************
+                        routing on filters
+        ***************************************************/
+        $scope.changeRouteS = changeS;
+        $scope.changeRouteR = changeR;
+        $scope.changeRouteG = changeG;
+
+        function changeS() {
+            $scope.superpower = true;
+            $scope.rich = false;
+            $scope.genious = false;
+        };
+
+        function changeR() {
+            $scope.superpower = false;
+            $scope.rich = true;
+            $scope.genious = false;
+        };
+
+        function changeG() {
+            $scope.superpower = false;
+            $scope.rich = false;
+            $scope.genious = true;
+        };
+
+        /*****************************************************
+                       Collection watcher function
+        *****************************************************/
+        $scope.$watchCollection('[superpower, rich, genious]', function(collection) {
+            for (var i = 0; i < collection.length; i++) {
+                if (!collection[i]) {
+                    $location.path('/')
                 }
             }
-            return counter;
+        });
+
+        /*******************************************
+                        routes filter options
+        ********************************************/
+        $scope.predicate = '';
+        $scope.reverse = false;
+        $scope.order = function(pred) {
+            $scope.reverse = !$scope.reverse;
+            $scope.predicate = pred;
+        };
+        $scope.byS = {
+            superpower: true
+        };
+        $scope.byR = {
+            rich: true
+        };
+        $scope.byG = {
+            genious: true
         };
 
-        $scope.countGenious = function() {
-            var counter = 0;
-            for (var i = 0; i < $scope.data.length; i++) {
-                if ($scope.data[i].genious === true) {
-                    counter++;
-                }
-            }
-            return counter;
-        };
+    }
 
-        $scope.saveState = function() {
-            $localStorage.data = $scope.data;
-        };
-
-    });
+})()

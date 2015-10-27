@@ -10,13 +10,13 @@
         </tr>
         </thead>
         <tbody>
-        <tr ng-repeat="person in data | filter: byG | orderBy:predicate:reverse track by $index" ng-click="saveState()">
+        <tr ng-repeat="person in data | filter: byG | orderBy:predicate:reverse track by $index" ng-click="saveState(); handler()">
             <td>{{person.name}}</td>
-            <td><input type="checkbox" ng-model="person.superpower" ng-click='handler()'/></td>
-            <td><input type="checkbox" ng-model="person.rich" ng-click='handler()'/></td>
-            <td><input type="checkbox" ng-model="person.genious" ng-click='handler()'/></td>
+            <td><input type="checkbox" ng-model="person.superpower"/></td>
+            <td><input type="checkbox" ng-model="person.rich"/></td>
+            <td><input type="checkbox" ng-model="person.genious"/></td>
             <td>
-                <a class="states" href="" ng-show="!person.confirm" ng-click="hideConfirm($index)">X</a>
+                <a class="states" href="" ng-show="!person.confirm" ng-click="hideConfirm($index)"><i class="glyphicon glyphicon-scissors"></i></a>
                 <p ng-show="person.confirm">Are you sure? ( <a class="states" href="" ng-click="deletePerson($index)">Yes</a>
                     <a class="states" href="" ng-click="person.confirm = false">No</a> )
                 </p>

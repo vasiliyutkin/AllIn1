@@ -2,14 +2,14 @@
     'use strict';
 
     angular.module('superPowers')
-        .directive('sidebar', sidebar);
+        .directive('navigation', navigation);
 
-    function sidebar() {
+    function navigation() {
         return {
             restrict: 'E',
             replace: false,
             controller: 'superCtrl',
-            templateUrl: 'views/sidebar.html'
+            templateUrl: 'views/nav.html'
         }
     };
 
