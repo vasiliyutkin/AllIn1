@@ -1,0 +1,40 @@
+.jumbotron {
+    background-color: #2a2025 !important;
+}
+
+body,
+html {
+    display: flex;
+    flex-flow: column wrap;
+}
+
+input,
+button {
+    font-weight: bold !important;
+    text-transform: uppercase;
+}
+
+table {
+    background: #fff !important;
+    color: #2a2025 !important;
+}
+
+th {
+    text-transform: uppercase;
+    font-size: 20px;
+}
+
+td,
+th {
+    text-align: center !important;
+    padding: 6px !important;
+    margin: 10px !important;
+    font-weight: 700 !important;
+}
+
+table tr td:nth-child(6) {
+    width: 400px;
+}
+table tr td:nth-child(1):hover {
+    color: red;
+}

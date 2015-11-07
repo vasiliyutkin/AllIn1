@@ -1,0 +1,29 @@
+<!doctype html>
+<html ng-app='app'>
+
+<head>
+    <base href="/">
+    <meta charset="UTF-8">
+    <title>NG</title>
+    <link rel="stylesheet" href="styles/style.css" />
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css" />
+    <script src="https://code.jquery.com/jquery-2.1.4.min.js"></script>
+    <script src="bower_components/angular/angular.min.js"></script>
+    <script src='bower_components/angular-resource/angular-resource.min.js'></script>
+    <script src='bower_components/angular-route/angular-route.min.js'></script>
+</head>
+
+<body ng-init="data = []">
+    <ul class="breadcrumb">
+        <li><a class='btn btn-xs btn-primary' ng-href="/">Home</a></li>
+        <li><a class='btn btn-xs btn-info' ng-href="squad">Squad</a></li>
+        <li><a class='btn btn-xs btn-success' ng-href="add">Add new One</a></li>
+    </ul>
+    <br>
+    <div class="container" ng-controller="moduleCtrl">
+        <ng-view/>
+    </div>
+    <script src="scripts/app.js"></script>
+</body>
+
+</html>
