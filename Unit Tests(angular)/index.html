@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html ng-app='exampleApp'>
+
+<head>
+    <meta charset="UTF-8">
+    <title>Unit Testing</title>
+    <link rel="stylesheet" type="text/css" href="bower_components/bootstrap/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="bower_components/bootstrap/dist/css/bootstrap-theme.min.css">
+    <script src='bower_components/angular/angular.min.js'></script>
+</head>
+
+<body ng-controller="defaultCtrl">
+    <div class="panel panel-default">
+        <div class="panel-body">
+            <p>Counter: {{counter}}</p>
+            <p>
+                <button class="btn btn-info" ng-click='incrementCounter()'>Increment</button>
+            </p>
+        </div>
+    </div>
+    <ul ng-repeat="product in products">
+        <li><span>{{product.name | labelCase }}</span> - <span>{{product.price | currency}}</span></li>
+    </ul>
+    <p>{{ 'test phase' | labelCase }}</p>
+    <div unordered-list="dateArray">
+    </div>
+    <script src="app.js"></script>
+</body>
+
+</html>
