@@ -1,16 +1,39 @@
+@import url(https://fonts.googleapis.com/css?family=Indie+Flower);
 .jumbotron {
-    background-color: #2a2025 !important;
+    background: #daffed !important;
 }
 
 i {
-    color: #10aded;
-    font-weight: 800;
+    color: #da7a55;
+    font-family: 'Indie Flower', cursive;
+}
+
+.start .row div a > img {
+    width: 350px;
+    height: 220px;
+}
+
+.thumbnail .thumb img {
+    width: 515px;
+    height: 573px;
+}
+
+.nav {
+    background: #fff !important;
+}
+
+* {
+    font-family: 'Indie Flower', cursive;
+    font-size: 18px;
+    font-weight: bold;
+    transition: all .3s ease;
 }
 
 body,
 html {
     display: flex;
     flex-flow: column wrap;
+    background: url('../assets/restaurant/restaurant.png');
 }
 
 input,

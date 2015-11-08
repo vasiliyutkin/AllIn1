@@ -1,0 +1,23 @@
+<div class="panel panel-default">
+    <div class="panel-heading">Team</div>
+    <div class="panel-body">
+        <table class="table table-stripped">
+            <thead>
+                <tr>
+                    <th>Name</th>
+                    <th>Nickname</th>
+                    <th>Description</th>
+                    <th>Age</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr ng-repeat='hero in team track by $index'>
+                    <td>{{hero.name}}</td>
+                    <td>{{hero.nickname}}</td>
+                    <td>{{hero.description}}</td>
+                    <td>{{hero.age}}</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>

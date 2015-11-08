@@ -1,0 +1,11 @@
+<div class="panel panel-default">
+    <div class="panel-heading">Favourite Heroes of Marvel Galaxy</div>
+    <div class="panel-body">
+        <div class="jumbotron" ng-repeat='hero in favs track by $index'>
+            <h1>{{hero.name}}</h1>
+            <p>{{hero.age}}</p>
+            <p>{{hero.description}}</p>
+            <img class="img-responsive" ng-src="{{hero.url}}" alt="hero">
+        </div>
+    </div>
+</div>

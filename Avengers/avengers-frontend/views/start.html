@@ -1,11 +1,10 @@
-<br>
 <div class="container">
-    <div class="jumbotron">
-        <span class='label label-info'>Avengers</span>
+    <div class="jumbotron start">
+        <span class='label label-info'>Avengers Gallery</span>
         <br>
         <br>
         <div class="row">
-            <div class="col-md-4" ng-repeat='item in imgSource'>
+            <div class="col-md-4 col-sm-6 col-xs-12" ng-repeat='item in imgSource'>
                 <a ui-sref='squad' class="thumbnail">
                     <img class='img-responsive' ng-src="{{item.url}}" alt="avengers">
                 </a>

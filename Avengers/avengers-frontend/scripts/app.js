@@ -1,4 +1,7 @@
-angular.module('app', ['mainEvents', 'ui.router', 'ngResource'])
+angular.module('app', ['mainMod', 'ui.router', 'ngResource'])
+    .run(function($log) {
+        $log.log('Run ended!');
+    })
     .constant('baseUrl', 'http://localhost:5500/avengers')
     .constant('ImgUrl', 'http://localhost:5500/images')
     .config(function($locationProvider, $stateProvider, $urlRouterProvider) {
@@ -15,11 +18,19 @@ angular.module('app', ['mainEvents', 'ui.router', 'ngResource'])
             .state('add', {
                 url: '/add',
                 templateUrl: '/views/add.html'
+            })
+            .state('team', {
+                url: '/team',
+                templateUrl: '/views/team.html'
+            })
+            .state('favs', {
+                url: '/favs',
+                templateUrl: '/views/favs.html'
             });
         $urlRouterProvider.otherwise('/');
     });
-angular.module('mainEvents', []);
-angular.module('mainEvents')
+angular.module('mainMod', []);
+angular.module('mainMod')
     .controller('moduleCtrl', moduleCtrl);
 
 function moduleCtrl($log, $scope, $location, $resource, baseUrl, ImgUrl) {
@@ -43,15 +54,14 @@ function moduleCtrl($log, $scope, $location, $resource, baseUrl, ImgUrl) {
             $location.path('/squad')
         }
     }
-    $scope.sayName = function(name) {
-        $log.log('I\'m  ' + name);
+    $scope.team = [];
+    $scope.favs = [];
+    $scope.addToSquad = function(index) {
+        $scope.team.push($scope.data[index]);
+        $location.path('/team');
     };
-}
-
-angular.module('app')
-    .run(function($log) {
-        $log.log('Run ended!');
-    })
-    .controller('mainCtrl', mainCtrl);
-
-function mainCtrl($resource, $scope, $location) {};
+    $scope.addToFavorites = function(index) {
+        $scope.favs.push($scope.data[index]);
+        $location.path('/favs');
+    }
+};

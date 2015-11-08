@@ -15,11 +15,15 @@
 </head>
 
 <body>
-    <ul class="breadcrumb">
-        <li><a ui-sref="home"><i class="fa fa-steam fa-lg"></i></a></li>
-        <li><a ui-sref="squad"><i class="fa fa-steam fa-soundcloud"></i></a></li>
-        <li><a ui-sref="add"><i class="fa fa-steam fa-skyatlas"></i></a></li>
-    </ul>
+    <div class="container">
+        <ul class="nav nav-pills nav-justified">
+            <li><a ui-sref="home"><i class="fa fa-steam fa-2x"></i> Home</a></li>
+            <li><a ui-sref="squad"><i class="fa fa-soundcloud fa-2x"></i> Squad</a></li>
+            <li><a ui-sref="add"><i class="fa fa-skyatlas fa-2x"></i> Add Hero</a></li>
+            <li><a ui-sref="team"><i class="fa fa-dashcube fa-2x"></i> My Team</a></li>
+            <li><a ui-sref="favs"><i class="fa fa-dribbble fa-2x"></i> Favourites</a></li>
+        </ul>
+    </div>
     <br>
     <div class="container" ng-controller="moduleCtrl">
         <div ui-view></div>
