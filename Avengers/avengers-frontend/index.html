@@ -1,0 +1,30 @@
+<!doctype html>
+<html ng-app='app'>
+
+<head>
+    <base href="/">
+    <meta charset="UTF-8">
+    <title>NG</title>
+    <link rel="stylesheet" href="styles/style.css" />
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css" />
+    <script src="https://code.jquery.com/jquery-2.1.4.min.js"></script>
+    <script src="bower_components/angular/angular.min.js"></script>
+    <script src='bower_components/angular-resource/angular-resource.min.js'></script>
+    <script src='bower_components/angular-ui-router/release/angular-ui-router.min.js'></script>
+</head>
+
+<body>
+    <ul class="breadcrumb">
+        <li><a ui-sref="home"><i class="fa fa-steam fa-lg"></i></a></li>
+        <li><a ui-sref="squad"><i class="fa fa-steam fa-soundcloud"></i></a></li>
+        <li><a ui-sref="add"><i class="fa fa-steam fa-skyatlas"></i></a></li>
+    </ul>
+    <br>
+    <div class="container" ng-controller="moduleCtrl">
+        <div ui-view></div>
+    </div>
+    <script src="scripts/app.js"></script>
+</body>
+
+</html>

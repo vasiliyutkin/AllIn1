@@ -1,0 +1,33 @@
+<br>
+<a ui-sref='home' class='btn btn-info btn-xs'>Back to main</a>
+<a ui-sref='squad' class='btn btn-info btn-xs'>Back to Squad</a>
+<br>
+<hr>
+<br>
+<form ng-submit="addItem(hero)" role='form'>
+    <div class="form-group">
+        <label for="name">Hero name:</label>
+        <input type="text" class="form-control" id="name" ng-model='hero.name'>
+    </div>
+    <div class="form-group">
+        <label for="age">Hero age:</label>
+        <input type="text" class="form-control" id="age" ng-model='hero.age'>
+    </div>
+    <div class="form-group">
+        <label for="nickname">Hero nickname:</label>
+        <input type="text" class="form-control" id="nnickame" ng-model='hero.nickname'>
+    </div>
+    <div class="form-group">
+        <label for="status">Hero superpowers:</label>
+        <input type="text" class="form-control" id="status" ng-model='hero.superpowers'>
+    </div>
+    <div class="form-group">
+        <label for="about">Hero description:</label>
+        <input type="text" class="form-control" id="about" ng-model='hero.description'>
+    </div>
+    <div class="form-group">
+        <label for="img">Hero img:</label>
+        <input type="text" class="form-control" id="img" ng-model='hero.url'>
+    </div>
+    <input class='btn btn-default btn-sm' type="submit" value='add hero'>
+</form>

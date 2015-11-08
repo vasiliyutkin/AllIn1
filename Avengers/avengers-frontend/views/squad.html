@@ -1,0 +1,47 @@
+<br>
+<a ui-sref='home' class='btn btn-info btn-xs'>Back to main</a>
+<a ui-sref='add' class='btn btn-info btn-xs'>add Hero</a>
+<br>
+<hr>
+<br>
+<div class="container">
+    <div class="jumbotron row" ng-repeat="hero in data">
+        <div class="row">
+            <h1 style="color: #10aded; margin: 10px; padding: 5px;" class="text-center">{{ hero.name }}</h1>
+        </div>
+        <br>
+        <ul class="list-group col-sm-5 col-xs-12" style="list-style: none; display: flex; flex-direction: column; color: #333; font-weight: bold; margin: 0 auto;">
+            <li class="list-group-item">
+                Name:
+                <span class="label label-default">{{hero.name}}</span>
+            </li>
+            <li class="list-group-item">
+                Age:
+                <span class="label label-default">{{hero.age}}</span>
+            </li>
+            <li class="list-group-item">
+                Nickname:
+                <span class="label label-success">{{hero.nickname}}</span>
+            </li>
+            <li class="list-group-item">
+                Superpowers:
+                <span class="label label-danger">{{hero.superpowers}}</span>
+            </li>
+            <li class="list-group-item">
+                About Avenger:
+                <span class="label label-info">{{hero.description}}</span>
+            </li>
+            <br>
+            <li>
+                <input type="button" name="addTosquad" value="Add to your Squad" ng-click="addToSquad()" class="btn btn-xs btn-info" />
+            </li>
+            <br>
+            <li>
+                <input type="button" name="addToFavorites" value="Add to Favorites" ng-click="addToFavorites()" class="btn btn-xs btn-info" />
+            </li>
+        </ul>
+        <div class="thumbnail col-sm-offset-1 col-sm-6 col-xs-offset-2 col-xs-9">
+            <img class="img-rounded" ng-src='{{hero.url}}' />
+        </div>
+    </div>
+</div>
