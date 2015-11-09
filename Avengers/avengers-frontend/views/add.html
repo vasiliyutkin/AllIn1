@@ -1,6 +1,7 @@
+<br>
 <div class="container">
     <div class="panel panel-default">
-        <div class="panel-heading">Add new <span class='label label-info'>HERO</span> to your squad</div>
+        <div class="panel-heading">Add new <span class='label label-info'>HERO</span> to your team</div>
         <div class="panel-body">
             <form ng-submit="addItem(hero)" role='form'>
                 <div class="form-group">
@@ -21,7 +22,7 @@
                 </div>
                 <div class="form-group">
                     <label for="about">Hero description:</label>
-                    <input type="text" class="form-control" id="about" ng-model='hero.description'>
+                    <textarea class="form-control" id="about" ng-model='hero.description' rows='7'></textarea>
                 </div>
                 <div class="form-group">
                     <label for="img">Hero img:</label>

@@ -2,8 +2,10 @@ angular.module('app', ['mainMod', 'ui.router', 'ngResource'])
     .run(function($log) {
         $log.log('Run ended!');
     })
-    .constant('baseUrl', 'http://localhost:5500/avengers')
-    .constant('ImgUrl', 'http://localhost:5500/images')
+    .constant('baseUrl', 'http://localhost:5500/avengers/')
+    .constant('teamUrl', 'http://localhost:5500/team/')
+    .constant('favsUrl', 'http://localhost:5500/favourites/')
+    .constant('ImgUrl', 'http://localhost:5500/images/')
     .config(function($locationProvider, $stateProvider, $urlRouterProvider) {
         $locationProvider.html5Mode(true);
         $stateProvider
@@ -29,39 +31,54 @@ angular.module('app', ['mainMod', 'ui.router', 'ngResource'])
             });
         $urlRouterProvider.otherwise('/');
     });
-angular.module('mainMod', []);
-angular.module('mainMod')
+angular.module('mainMod', [])
     .controller('moduleCtrl', moduleCtrl);
 
-function moduleCtrl($log, $scope, $location, $resource, baseUrl, ImgUrl) {
-    $scope.images = $resource(ImgUrl + ':id', {
+function moduleCtrl($log, $scope, $location, $resource, baseUrl, ImgUrl, teamUrl, favsUrl) {
+    $scope.imagesResource = $resource(ImgUrl + ':id', {
         id: '@id'
     });
-    $scope.avengers = $resource(baseUrl + ':id', {
+    $scope.avengersResource = $resource(baseUrl + ':id', {
         id: '@id'
     });
-    $scope.imgSource = $scope.images.query();
-    $scope.data = $scope.avengers.query();
-    $scope.reset = function() {
-        $scope.data = [];
+    $scope.imgSource = $scope.imagesResource.query();
+    $scope.data = $scope.avengersResource.query();
+    $scope.resetTeam = function() {
+        $scope.team = [];
+    }
+    $scope.resetFavs = function() {
+        $scope.favs = [];
     }
     $scope.deleteItem = function(index) {
         $scope.data.splice(index, 1);
     }
     $scope.addItem = function(hero) {
         if (hero) {
-            $scope.data.push(hero)
-            $location.path('/squad')
+            $scope.team.push(hero)
+            $location.path('/team')
         }
     }
-    $scope.team = [];
-    $scope.favs = [];
+
+    $scope.teamResource = $resource(teamUrl + ':id', {
+        id: '@id'
+    });
+
+    $scope.favsResource = $resource(favsUrl + ':id', {
+        id: '@id'
+    });
+
+    $scope.team = $scope.teamResource.query();
+    
+    $scope.favs = $scope.favsResource.query();
+
     $scope.addToSquad = function(index) {
         $scope.team.push($scope.data[index]);
         $location.path('/team');
     };
+    
     $scope.addToFavorites = function(index) {
         $scope.favs.push($scope.data[index]);
         $location.path('/favs');
     }
+    
 };

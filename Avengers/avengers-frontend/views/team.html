@@ -1,4 +1,14 @@
-<div class="panel panel-default">
+<br>
+<div class="container" ng-if='team.length == 0'>
+    <div class="btn-group">
+        <a class="btn btn-info btn-sm" ui-sref='squad'>TO SQUAD</a>
+        <a class="btn btn-success btn-sm" ui-sref='add'>ADD NEW HERO</a>
+    </div>
+    <div class="jumbotron">
+        <h1>Nothing here yet! Please add somebody to your <span class='label label-default'>Team</span></h1>
+    </div>
+</div>
+<div class="panel panel-default" ng-if='team.length !== 0'>
     <div class="panel-heading">Team</div>
     <div class="panel-body">
         <table class="table table-stripped">

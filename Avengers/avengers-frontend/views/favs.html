@@ -1,4 +1,13 @@
-<div class="panel panel-default">
+<br>
+<div class="container" ng-if='favs.length == 0'>
+    <div class="btn-group">
+        <a class="btn btn-info btn-sm" ui-sref='squad'>TO SQUAD</a>
+    </div>
+    <div class="jumbotron">
+        <h1>Nothing here yet! Please add somebody to your <span class='label label-default'>Favourite Heroes</span></h1>
+    </div>
+</div>
+<div class="panel panel-default" ng-if='favs.length !== 0'>
     <div class="panel-heading">Favourite Heroes of Marvel Galaxy</div>
     <div class="panel-body">
         <div class="jumbotron" ng-repeat='hero in favs track by $index'>
