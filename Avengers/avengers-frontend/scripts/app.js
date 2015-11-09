@@ -1,8 +1,8 @@
-angular.module('app', ['mainMod', 'ui.router', 'ngResource'])
+angular.module('app', ['mainMod'])
     .run(function($log) {
         $log.log('Run ended!');
     })
-    .constant('baseUrl', 'http://localhost:5500/avengers/')
+    .constant('avengersUrl', 'http://localhost:5500/avengers/')
     .constant('teamUrl', 'http://localhost:5500/team/')
     .constant('favsUrl', 'http://localhost:5500/favourites/')
     .constant('ImgUrl', 'http://localhost:5500/images/')
@@ -31,32 +31,44 @@ angular.module('app', ['mainMod', 'ui.router', 'ngResource'])
             });
         $urlRouterProvider.otherwise('/');
     });
-angular.module('mainMod', [])
+angular.module('mainMod', ['ui.router', 'ngResource', 'ngAnimate'])
     .controller('moduleCtrl', moduleCtrl);
 
-function moduleCtrl($log, $scope, $location, $resource, baseUrl, ImgUrl, teamUrl, favsUrl) {
+function moduleCtrl($log, $scope, $location, $resource, avengersUrl, ImgUrl, teamUrl, favsUrl) {
     $scope.imagesResource = $resource(ImgUrl + ':id', {
         id: '@id'
     });
-    $scope.avengersResource = $resource(baseUrl + ':id', {
+    $scope.avengersResource = $resource(avengersUrl + ':id', {
         id: '@id'
     });
     $scope.imgSource = $scope.imagesResource.query();
-    $scope.data = $scope.avengersResource.query();
+    $scope.avengers = $scope.avengersResource.query();
+
     $scope.resetTeam = function() {
-        $scope.team = [];
-    }
-    $scope.resetFavs = function() {
-        $scope.favs = [];
-    }
-    $scope.deleteItem = function(index) {
-        $scope.data.splice(index, 1);
-    }
-    $scope.addItem = function(hero) {
-        if (hero) {
-            $scope.team.push(hero)
-            $location.path('/team')
+        for (var i = 0; i < $scope.team.length; i++) {
+            $scope.team[i].$delete()
+                .then(function() {
+                    $scope.team = [];
+                    $location.path('/');
+                })
         }
+    }
+
+    $scope.resetFavs = function() {
+        for (var i = 0; i < $scope.favs.length; i++) {
+            $scope.favs[i].$delete()
+                .then(function() {
+                    $scope.favs = [];
+                    $location.path('/');
+                })
+        }
+    }
+
+    $scope.addItem = function(hero) {
+        new $scope.teamResource(hero).$save().then(function(newHero) {
+            $scope.team.push(newHero);
+            $location.path('/team')
+        })
     }
 
     $scope.teamResource = $resource(teamUrl + ':id', {
@@ -68,17 +80,37 @@ function moduleCtrl($log, $scope, $location, $resource, baseUrl, ImgUrl, teamUrl
     });
 
     $scope.team = $scope.teamResource.query();
-    
+
     $scope.favs = $scope.favsResource.query();
 
     $scope.addToSquad = function(index) {
-        $scope.team.push($scope.data[index]);
-        $location.path('/team');
+        delete $scope.avengers[index].id;
+        new $scope.teamResource($scope.avengers[index]).$save()
+            .then(function(newHero) {
+                $scope.team.push(newHero);
+                $location.path('/team');
+            })
     };
-    
+
     $scope.addToFavorites = function(index) {
-        $scope.favs.push($scope.data[index]);
-        $location.path('/favs');
-    }
-    
-};
+        delete $scope.avengers[index].id;
+        new $scope.favsResource($scope.avengers[index]).$save()
+            .then(function(newHero) {
+                $scope.favs.push(newHero);
+                $location.path('/favs');
+            })
+    };
+
+    $scope.deleteFromTeam = function(index) {
+        $scope.team[index].$delete()
+            .then(function() {
+                $scope.team.splice(index, 1);
+            })
+    };
+    $scope.deleteFromFavs = function(index) {
+        $scope.favs[index].$delete()
+            .then(function() {
+                $scope.favs.splice(index, 1);
+            })
+    };
+}

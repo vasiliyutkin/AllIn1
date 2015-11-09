@@ -11,13 +11,14 @@
 <div class="panel panel-default" ng-if='team.length !== 0'>
     <div class="panel-heading">Team</div>
     <div class="panel-body">
-        <table class="table table-stripped">
+        <table class="table table-stripped table-bordered">
             <thead>
                 <tr>
                     <th>Name</th>
                     <th>Nickname</th>
                     <th>Description</th>
                     <th>Age</th>
+                    <th>Delete</th>
                 </tr>
             </thead>
             <tbody>
@@ -26,8 +27,12 @@
                     <td>{{hero.nickname}}</td>
                     <td>{{hero.description}}</td>
                     <td>{{hero.age}}</td>
+                    <td>
+                        <input type='button' class="btn btn-danger btn-xs" value='delete' ng-click="deleteFromTeam($index)" />
+                    </td>
                 </tr>
             </tbody>
         </table>
     </div>
+    <input class="btn btn-danger btn-lg text-center" type="button" ng-click="resetTeam()" value="Disband" />
 </div>

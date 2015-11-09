@@ -3,6 +3,37 @@
     background: #daffed !important;
 }
 
+.ng-valid {
+    background-color: lightgreen;
+}
+
+span.error {
+    color: crimson;
+    font-weight: bold;
+}
+
+.ng-enter {
+    transition: .6s ease all;
+    opacity: 0;
+    transform: translateX(-100%);
+}
+
+.ng-enter-active {
+    opacity: 1;
+    transform: translateX(0);
+}
+
+.ng-leave {
+    transition: .6s ease all;
+    opacity: 1;
+    transform: translateX(0);
+}
+
+.ng-leave-active {
+    opacity: 0;
+    transform: translateX(-100%);
+}
+
 i {
     color: #da7a55;
     font-family: 'Indie Flower', cursive;
