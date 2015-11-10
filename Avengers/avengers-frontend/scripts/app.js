@@ -1,1 +1,4 @@
-angular.module('app', ['mainMod']);
+(function() {
+    "use strict";
+    angular.module('app', ['mainMod']);
+})();

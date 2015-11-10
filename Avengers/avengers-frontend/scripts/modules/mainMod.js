@@ -1,1 +1,4 @@
-angular.module('mainMod', ['ui.router', 'ngResource', 'ngAnimate']);
+(function() {
+    "use strict";
+    angular.module('mainMod', ['ui.router', 'ngResource', 'ngAnimate']);
+})();
