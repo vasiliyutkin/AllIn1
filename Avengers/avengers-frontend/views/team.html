@@ -11,28 +11,28 @@
 <div class="panel panel-default" ng-if='team.length !== 0'>
     <div class="panel-heading">Team</div>
     <div class="panel-body">
-        <table class="table table-stripped table-bordered">
-            <thead>
-                <tr>
-                    <th>Name</th>
-                    <th>Nickname</th>
-                    <th>Description</th>
-                    <th>Age</th>
-                    <th>Delete</th>
-                </tr>
-            </thead>
-            <tbody>
-                <tr ng-repeat='hero in team track by $index'>
-                    <td>{{hero.name}}</td>
-                    <td>{{hero.nickname}}</td>
-                    <td>{{hero.description}}</td>
-                    <td>{{hero.age}}</td>
-                    <td>
-                        <input type='button' class="btn btn-danger btn-xs" value='delete' ng-click="deleteFromTeam($index)" />
-                    </td>
-                </tr>
-            </tbody>
-        </table>
+        <div class="row">
+            <div class="col-sm-6 col-md-4" ng-repeat="hero in team">
+                <div class="thumbnail thumbnail-team">
+                    <img ng-src="{{hero.url}}" alt="{{$index+1}}">
+                    <div class="caption">
+                        <p style="text-align: center; color: #2a1d32; font-weight: 500;"><span class='label label-info'>{{hero.name}}</span> - <span class='label label-success'>{{hero.age}}</span></p>
+                        <h3 style="text-align: center; color: #2a1d32; font-weight: 500;">
+                            <span class='label label-default'>{{hero.nickname}}</span> 
+                            <a class="btn btn-danger btn-sm" role="button" ng-click="deleteFromTeam($index)">Delete</a>
+                        </h3>
+                        <p style="text-align: center; color: #2a1d32; font-weight: 500;">{{hero.superpowers}}</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <br>
+        <hr>
+        <br>
+        <div class="row">
+            <div class="col-sm-offset-5 col-sm-2">
+                <a class="btn btn-info btn-lg" role="button" ng-click="resetTeam()">Disband</a>
+            </div>
+        </div>
     </div>
-    <input class="btn btn-danger btn-lg text-center" type="button" ng-click="resetTeam()" value="Disband" />
 </div>

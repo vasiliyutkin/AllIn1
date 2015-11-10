@@ -1,6 +1,6 @@
-@import url(https://fonts.googleapis.com/css?family=Indie+Flower);
+@import url(https://fonts.googleapis.com/css?family=Vollkorn);
 .jumbotron {
-    background: #daffed !important;
+    background: #fff !important;
 }
 
 .ng-valid {
@@ -12,8 +12,30 @@ span.error {
     font-weight: bold;
 }
 
+.thumbnail-team {
+    width: 350px !important;
+    height: 570px !important;
+    overflow-y: hidden;
+}
+
+.thumbnail-team img {
+    width: 100% !important;
+    height: 450px !important;
+}
+
+.thumbnail-favs img {
+    width: 100% !important;
+    height: 400px !important;
+}
+
+.thumbnail-favs {
+    width: 540px !important;
+    height: 715px !important;
+    overflow-y: hidden;
+}
+
 .ng-enter {
-    transition: .6s ease all;
+    transition: .3s ease all;
     opacity: 0;
     transform: translateX(-100%);
 }
@@ -24,7 +46,7 @@ span.error {
 }
 
 .ng-leave {
-    transition: .6s ease all;
+    transition: .3s ease all;
     opacity: 1;
     transform: translateX(0);
 }
@@ -35,8 +57,9 @@ span.error {
 }
 
 i {
-    color: #da7a55;
-    font-family: 'Indie Flower', cursive;
+    color: #10aded;
+    font-size: 20px;
+    font-family: 'Vollkorn', serif;
 }
 
 .start .row div a > img {
@@ -45,8 +68,8 @@ i {
 }
 
 .thumbnail .thumb img {
-    width: 515px;
-    height: 573px;
+    width: 400px;
+    height: 600px;
 }
 
 .nav {
@@ -54,17 +77,17 @@ i {
 }
 
 * {
-    font-family: 'Indie Flower', cursive;
+    font-family: 'Vollkorn', serif;
     font-size: 18px;
     font-weight: bold;
-    transition: all .3s ease;
+    transition: all .7s ease;
 }
 
 body,
 html {
     display: flex;
     flex-flow: column wrap;
-    background: url('../assets/restaurant/restaurant.png');
+    background: url('../assets/stardust/stardust.png');
 }
 
 input,

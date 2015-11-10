@@ -7,7 +7,7 @@
     </div>
     <div class="jumbotron row" ng-repeat="hero in avengers | filter:heroSearcher track by $index">
         <div class="row">
-            <h1 style="font-weight: bold; color: #be4575; margin: 10px; padding: 5px; text-transform: uppercase;" class="text-center">{{ hero.name }}</h1>
+            <h2 style="font-weight: bold; color: #101; margin: 10px; padding: 5px" class="text-center">{{ hero.name }}</h2>
         </div>
         <br>
         <div class="row">
@@ -17,7 +17,7 @@
             </div>
         </div>
         <br>
-        <ul class="list-group col-sm-5 col-xs-12" style="list-style: none; display: flex; flex-direction: column; color: #333; font-weight: bold; margin: 0 auto;">
+        <ul class="list-group col-sm-7 col-xs-12" style="list-style: none; display: flex; flex-direction: column; color: #333; font-weight: bold; margin: 0 auto;">
             <li class="list-group-item">
                 Age:
                 <span class="label label-warning">{{hero.age}}</span>
@@ -28,14 +28,14 @@
             </li>
             <li class="list-group-item">
                 Superpowers:
-                <span class="label label-danger">{{hero.superpowers}}</span>
+                <p style="font-size: 14px; font-weight: 600; color: #333;">{{hero.superpowers}}</p>
             </li>
             <li class="list-group-item">
                 About Avenger:
                 <p style="font-size: 14px; font-weight: 800; color: lightcoral;">{{hero.description}}</p>
             </li>
         </ul>
-        <div class="thumbnail col-sm-offset-1 col-sm-6 col-xs-offset-2 col-xs-9">
+        <div class="thumbnail col-sm-4">
             <div class="thumb">
                 <img ng-src='{{hero.url}}' />
             </div>

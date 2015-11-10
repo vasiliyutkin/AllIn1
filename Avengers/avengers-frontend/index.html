@@ -5,6 +5,7 @@
     <base href="/">
     <meta charset="UTF-8">
     <title>NG</title>
+    <link rel="stylesheet" href="assets/jackedup.css">
     <link rel="stylesheet" href="styles/style.css" />
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css" />
@@ -13,25 +14,20 @@
     <script src='bower_components/angular-resource/angular-resource.min.js'></script>
     <script src='bower_components/angular-ui-router/release/angular-ui-router.min.js'></script>
     <script src='bower_components/angular-animate/angular-animate.min.js'></script>
+    <script src='assets/humane.min.js'></script>
 </head>
 
-<body ng-controller="moduleCtrl">
-    <div class="container">
-        <ul class="nav nav-pills nav-justified">
-            <li><a ui-sref="home"><i class="fa fa-steam fa-2x"></i> Home</a></li>
-            <li><a ui-sref="squad"><i class="fa fa-weibo fa-2x"></i> Squad</a></li>
-            <li><a ui-sref="add"><i class="fa fa-qq fa-2x"></i> Add Hero</a></li>
-            <li><a ui-sref="team"><i class="fa fa-optin-monster fa-2x"></i> My Team <span style="font-size: 30px;" class="badge">{{ team.length || 0 }}</span></a></a>
-            </li>
-            <li><a ui-sref="favs"><i class="fa fa-pied-piper-alt fa-2x"></i> Favourites <span style="font-size: 30px;" class="badge">{{ favs.length || 0 }}</span></a></a>
-            </li>
-        </ul>
-    </div>
-    <br>
-    <div class="container">
-        <div ui-view ></div>
-    </div>
+<body>
+    <!-- NAVIGATION -->
+    <navigation></navigation>
+    <!-- UI-VIEV -->
+    <main-content></main-content>
+    <!-- JS partials include section -->
     <script src="scripts/app.js"></script>
+    <script src="scripts/modules/mainMod.js"></script>
+    <script src="scripts/controllers/moduleController.js"></script>
+    <script src="scripts/directives/directives.js"></script>
+    <script src="scripts/app.config.js"></script>
 </body>
 
 </html>
