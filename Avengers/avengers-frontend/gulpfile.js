@@ -6,7 +6,7 @@ gulp.task('server', function() {
     gulp.src('./')
         .pipe(server({
             livereload: true,
-            directoryListing: true,
+            directoryListing: false,
             open: true
         }));
 });

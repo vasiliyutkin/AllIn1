@@ -3,10 +3,6 @@
     background: #fff !important;
 }
 
-.ng-valid {
-    background-color: lightgreen;
-}
-
 span.error {
     color: crimson;
     font-weight: bold;
