@@ -1,0 +1,22 @@
+{
+  "name": "app",
+  "description": "",
+  "main": "app.js",
+  "authors": [
+    "Andrew Blinov <D-sert@ya.ru>"
+  ],
+  "license": "ISC",
+  "moduleType": [],
+  "homepage": "",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "restangular": "~1.5.1",
+    "bootstrap": "~3.3.5"
+  }
+}

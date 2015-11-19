@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html ng-app='myApp'>
+
+<head>
+    <title>test</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" type="text/css" href="bower_components/bootstrap/dist/css/bootstrap.min.css">
+    <script src='bower_components/angular/angular.min.js'></script>
+    <script src='bower_components/lodash/lodash.min.js'></script>
+    <script src='bower_components/restangular/dist/restangular.min.js'></script>
+</head>
+
+<body>
+    <br>
+    <div class="container-fluid" ng-controller="myController">
+        <div class="well">
+            <div class="row">
+                <div class="col-md-6">
+                    <form name='messageForm' role='form' ng-submit='writeNewMessage(newMessage)' novalidate>
+                        <div class="form-group">
+                            <label>From:</label>
+                            <input ng-model='newMessage.from' class='form-control' type="text" placeholder='from'>
+                        </div>
+                        <div class="form-group">
+                            <label>To:</label>
+                            <input ng-model='newMessage.to' class='form-control' type="text" placeholder='to'>
+                        </div>
+                        <div class="form-group">
+                            <label>Description:</label>
+                            <textarea rows=6 ng-model='newMessage.name' class='form-control' placeholder='message text here'></textarea>
+                        </div>
+                        <div class="form-group">
+                            <label>Comment:</label>
+                            <textarea rows=6 ng-model='newMessage.nickname' class='form-control' placeholder='comment'></textarea>
+                        </div>
+                        <button class="btn btn-default" type="submit">write New</button>
+                    </form>
+                </div>
+                <div class="col-md-6">
+                    <form name='messageForm' role='form' ng-submit='addLad(newLad)' novalidate>
+                        <div class="form-group">
+                            <label>Name:</label>
+                            <input ng-model='newLad.whohasit' class='form-control' type="text" name="from" placeholder='name'>
+                        </div>
+                        <div class="form-group">
+                            <label>Superpower:</label>
+                            <input ng-model='newLad.superpower' class='form-control' type="text" name="from" placeholder='superpower'>
+                        </div>
+                        <button class="btn btn-default" type="submit">add Superpower</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+        <div class="jumbotron">
+            <div class="row">
+                <div class="col-md-6">
+                    <table class="table table-stripped table-bordered table-hover">
+                        <thead>
+                            <tr>
+                                <th>From</th>
+                                <th>To</th>
+                                <th>Description</th>
+                                <th>Comment</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr ng-show='messages.length === 0'>
+                                <td style='text-align: center; text-transform: uppercase; color: lightgreen;' colspan="5">No data yet</td>
+                            </tr>
+                            <tr ng-repeat="mess in messages track by $index" ng-cloak>
+                                <td>{{mess.from}}</td>
+                                <td>{{mess.to}}</td>
+                                <td>{{mess.name}}</td>
+                                <td>{{mess.nickname}}</td>
+                                <td><a ng-click='deleteMessage($index)' class="btn btn-sm btn-danger">Delete</a></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <div class="col-md-6">
+                    <table class="table table-stripped table-bordered table-hover">
+                        <thead>
+                            <tr>
+                                <th>Name</th>
+                                <th>Superpower</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr ng-show='lads.length === 0'>
+                                <td style='text-align: center; text-transform: uppercase; color: lightgreen;' colspan="3">No data yet</td>
+                            </tr>
+                            <tr ng-repeat="lad in lads track by $index" ng-cloak>
+                                <td><span>Name:</span> {{lad.whohasit}}</td>
+                                <td><span>Superpower:</span> {{lad.superpower}}</td>
+                                <td>
+                                    <a ng-click='deleteLad($index)' class="btn btn-sm btn-danger">Delete</a>
+                                </td>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-offset-9">
+                    <a class="btn btn-info" ng-click='clearAllMessages()'>Clear Messages</a>
+                    <a class="btn btn-primary" ng-click='clearAllLads()'>Clear Superpowers</a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="app.js"></script>
+</body>
+
+</html>

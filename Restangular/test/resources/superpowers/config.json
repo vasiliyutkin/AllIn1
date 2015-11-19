@@ -1,0 +1,21 @@
+{
+	"type": "Collection",
+	"properties": {
+		"superpower": {
+			"name": "superpower",
+			"type": "string",
+			"typeLabel": "string",
+			"required": true,
+			"id": "superpower",
+			"order": 0
+		},
+		"whohasit": {
+			"name": "whohasit",
+			"type": "string",
+			"typeLabel": "string",
+			"required": true,
+			"id": "whohasit",
+			"order": 1
+		}
+	}
+}
