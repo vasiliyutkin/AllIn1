@@ -1,0 +1,12 @@
+<h2>Settings</h2>
+<form class="form-horizontal" role="form" ng-submit="vm.save()" novalidate>
+    <div class="form-group">
+        <label class="control-label col-sm-2" for="enter">Enter your location:</label>
+        <div class="col-sm-2">
+            <input ng-model="vm.user.location" timezone="user.timezone" auto-fill="fetchCities" autocomplete="off" placeholder="Location" class="form-control" type="text" class="form-control" id="enter">
+        </div>
+        <div class='col-sm-1'>
+            <input class="btn btn-info" type="submit" value="Save" />
+        </div>
+    </div>
+</form>

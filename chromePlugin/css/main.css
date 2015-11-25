@@ -1,0 +1,51 @@
+body,
+html {
+    background-color: #2a1d32;
+    color: #fff;
+}
+
+#datetime {
+    text-align: center;
+}
+
+#datetime h1 {
+    color: #f00b43;
+    font-size: 8em;
+}
+
+#datetime h2 {
+    color: #f00b43;
+    font-size: 2.0em;
+}
+
+#forecast ul li {
+    color: #f00b43;
+    font-size: 4.5em;
+    text-align: center;
+}
+
+#forecast ul li h3 {
+    color: #f00b43;
+    font-size: 2.4em;
+}
+
+#forecast ul li .today h3 {
+    color: #f00b43;
+    font-size: 3.8em;
+    color: #fff;
+}
+
+#actionbar {
+    position: absolute;
+    top: 0.5em;
+    left: 1.0em;
+}
+
+#actionbar a {
+    font-size: 2em;
+    color: #fff;
+}
+
+input[type='text'] {
+    color: #101;
+}

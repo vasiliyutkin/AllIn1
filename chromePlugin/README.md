@@ -1,0 +1,1 @@
+To check this app go to chromeXtensions ('chrome://extensions/'), then press “Load unpackged extension...” and choose this folder.
