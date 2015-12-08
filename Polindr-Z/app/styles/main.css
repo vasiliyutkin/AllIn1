@@ -1,0 +1,19 @@
+body {
+    background-color: #fff;
+}
+
+label {
+    color: #1a1a1a;
+    font-weight: bold;
+    font-size: 25px;
+    text-transform: uppercase;
+}
+
+#result {
+    color: #1a1a1a;
+}
+
+#total {
+    color: #101;
+    font-weight: 600;
+}

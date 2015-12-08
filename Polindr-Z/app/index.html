@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Polindromes</title>
+    <link rel="stylesheet" type="text/css" href="bower_components/bootstrap-css/css/bootstrap.min.css">
+    <link rel="stylesheet" href="styles/main.css">
+</head>
+
+<body>
+    <br>
+    <div class="container">
+        <h1 class="text-center"><span class='label label-default'>Polindromes</span></h1>
+        <br />
+        <form role="form" onsubmit="return false">
+            <div class="form-group">
+                <label for="polindr">Enter value:</label>
+                <input type="text" class="form-control" id="polindr" placeholder='value' />
+            </div>
+            <input id="check" type="submit" class="btn btn-success btn-lg col-md-offset-5 col-md-2" value="TEST">
+        </form>
+        <br />
+        <br />
+        <hr />
+        <div>
+            <h1 id="result"></h1>
+            <p id="total"></p>
+        </div>
+    </div>
+    <script src="script/app.js"></script>
+</body>
+
+</html>
