@@ -1,0 +1,24 @@
+body,
+html {
+    width: 100%;
+    height: auto;
+    margin: 0;
+    padding: 0;
+}
+
+.canvas-container {
+    border: 12px solid #fa5732;
+    background-color: #51363d;
+    border-radius: 12px;
+    margin: 0 auto;
+}
+
+input[type='button'] {
+    color: #fff;
+    font-weight: 900;
+    background-color: #333;
+    margin-left: 47.5% !important;
+    padding: 15px;
+    border-radius: 5px;
+    border: 2px solid #fff;
+}

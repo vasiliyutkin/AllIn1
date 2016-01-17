@@ -1,0 +1,28 @@
+{% extends 'AppBundle::base.html.twig' %}
+
+{% block title %}{% endblock %}
+
+{% block content %}
+
+	<div class="container">
+		{% include 'AppBundle::page/modules/slideA.html.twig' %}
+		{% include 'AppBundle::page/modules/slideB.html.twig' %}
+    {% include 'AppBundle::page/modules/slideC.html.twig' %}
+    {% include 'AppBundle::page/modules/slideD.html.twig' %}
+
+		<div class="row">
+      <div class="col-xs-12">
+        <div class='btn-group pull-right'>
+           <a class="btn btn-default btn-sm" ng-click="gotoView('home/a')">home/a</a>
+           <a class="btn btn-default btn-sm" ng-click="gotoView('home/b')">home/b</a>
+           <a class="btn btn-default btn-sm" ng-click="gotoView('home/c')">home/c</a>
+           <a class="btn btn-default btn-sm" ng-click="gotoView('home/d')">home/d</a>
+        </div>
+      </div>
+			<div class="col-xs-12">
+				<div ng-view></div>
+			</div>
+		</div>
+	</div>
+
+{% endblock %}

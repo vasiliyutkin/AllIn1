@@ -1,0 +1,82 @@
+{% extends '::base.html.twig' %}
+
+{% block stylesheets %}
+	<link rel="stylesheet" href="{{ asset('lib/css/normalize.css') }}"/>
+	<link rel="stylesheet" href="{{ asset('lib/css/animate.min.css') }}"/>
+	<link rel="stylesheet" href="{{ asset('lib/css/bootstrap.min.css') }}"/>
+	{% stylesheets '@AppBundle/Resources/public/css/*' filter='cssrewrite' %}
+	<link rel="stylesheet" href="{{ asset_url }}" />
+	{% endstylesheets %}
+{% endblock %}
+
+{% block javascripts %}
+	<script src="{{ asset('lib/scripts/require.js') }}"></script>
+	<script src="{{ asset('lib/scripts/jquery.min.js') }}"></script>
+	<script src="{{ asset('lib/scripts/angular.min.js') }}"></script>
+	<script src="{{ asset('lib/scripts/angular-route.min.js') }}"></script>
+	<script src="{{ asset('lib/scripts/bootstrap.min.js') }}"></script>
+	<script src="{{ asset('lib/scripts/html5shiv.min.js') }}"></script>
+	{% javascripts '@AppBundle/Resources/public/js/*' %}
+	<script src="{{ asset_url }}"></script>
+	{% endjavascripts %}
+{% endblock %}
+
+{% block body %}
+	<div id="wrapper">
+    <header>
+    {% block header_nav %}
+    <nav class="navbar navbar-inverse">
+    <div class="container-fluid">
+      <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+        <ul class="nav navbar-nav">
+          <li>
+            <a href="{{ path('_home') }}">Home</a>
+          </li>
+          <li>
+            <a href="{{ path('_about') }}">About</a>
+          </li>
+          <li>
+              <a href="{{ path('_description') }}">Description</a>
+          </li>
+        </ul>
+        <form class="navbar-form navbar-right">
+          <div class="form-group">
+            <input type="text" class="form-control" placeholder="Login">
+          </div>
+          <div class="form-group">
+            <input type="text" class="form-control" placeholder="password">
+          </div>
+          <button type="submit" class="btn btn-default">Authorize</button>
+        </form>
+      </div>
+    </div>
+  </nav>
+    {% endblock %}
+		</header>
+
+		<section id="content">
+      <br>
+			{% block content %}{% endblock %}
+		</section>
+
+		<footer>
+      {% block powered %}
+      <div class="powered-text">
+        <h3>Powered by <span style='color: #fafafa; text-transform: capitalize; border-bottom: 2px solid #a55;'>Andrew Blinoff</span> on listed Technlogies &darr;</h3>
+      </div>
+          <div id='powered-by'>
+            <div class='powered-item'><img style="height: 50px; height: 50px;" alt="Brand" src="{{asset('images/powered/ng.png')}}"></div>
+            <div class='powered-item'><img style="height: 50px; height: 50px;" alt="Brand" src="{{asset('images/powered/html.svg')}}"></div>
+            <div class='powered-item'><img style="height: 50px; height: 50px;" alt="Brand" src="{{asset('images/powered/css.png')}}"></div>
+            <div class='powered-item'><img style="width: 50px; height: 50px;" alt="Brand" src="{{asset('images/powered/sf.png')}}"></div>
+            <div class='powered-item'><img style="width: 50px; height: 50px;" alt="Brand" src="{{asset('images/powered/sql.png')}}"></div>
+            <div class='powered-item'><img style="height: 50px; height: 50px;" alt="Brand" src="{{asset('images/powered/unity.png')}}"></div>
+            <div class='powered-item'><img style="height: 50px; height: 50px;" alt="Brand" src="{{asset('images/powered/gulp.png')}}"></div>
+          </div>
+        <div class='feedback'>
+          <p>You could leave feedback to me on <a style='color: #d3c0d3;' href="http://vk.com/and1_ray" target='_blank'>Vk</a> &rArr; <a style='color: #d3c0d3;' href="https://www.facebook.com/andrey.blinov.33" target='_blank'>Fb</a> &rArr; <a style='color: #d3c0d3;' href="https://github.com/vasiliyutkin" target='_blank'>Github</a></p>
+        </div>
+      {% endblock %}
+		</footer>
+	</div>
+{% endblock %}
