@@ -345,19 +345,19 @@ class appProdProjectContainer extends Container
     protected function getDoctrineCache_Providers_Doctrine_Orm_DefaultMetadataCacheService()
     {
         $this->services['doctrine_cache.providers.doctrine.orm.default_metadata_cache'] = $instance = new \Doctrine\Common\Cache\ArrayCache();
-        $instance->setNamespace('sf2orm_default_300088a5f781bdda27ac4aebba4b69d243b4a7fba2a63e1d59ed1aafbdeb289e');
+        $instance->setNamespace('sf2orm_default_3c15e1e0155fc2525dece0e5e762bcdd8bf2053b8bdd3754b360ae1f0410d9ee');
         return $instance;
     }
     protected function getDoctrineCache_Providers_Doctrine_Orm_DefaultQueryCacheService()
     {
         $this->services['doctrine_cache.providers.doctrine.orm.default_query_cache'] = $instance = new \Doctrine\Common\Cache\ArrayCache();
-        $instance->setNamespace('sf2orm_default_300088a5f781bdda27ac4aebba4b69d243b4a7fba2a63e1d59ed1aafbdeb289e');
+        $instance->setNamespace('sf2orm_default_3c15e1e0155fc2525dece0e5e762bcdd8bf2053b8bdd3754b360ae1f0410d9ee');
         return $instance;
     }
     protected function getDoctrineCache_Providers_Doctrine_Orm_DefaultResultCacheService()
     {
         $this->services['doctrine_cache.providers.doctrine.orm.default_result_cache'] = $instance = new \Doctrine\Common\Cache\ArrayCache();
-        $instance->setNamespace('sf2orm_default_300088a5f781bdda27ac4aebba4b69d243b4a7fba2a63e1d59ed1aafbdeb289e');
+        $instance->setNamespace('sf2orm_default_3c15e1e0155fc2525dece0e5e762bcdd8bf2053b8bdd3754b360ae1f0410d9ee');
         return $instance;
     }
     protected function getEventDispatcherService()
@@ -755,7 +755,7 @@ class appProdProjectContainer extends Container
         $c = $this->get('security.authentication.manager');
         $d = $this->get('router', ContainerInterface::NULL_ON_INVALID_REFERENCE);
         $e = new \Symfony\Component\Security\Http\AccessMap();
-        return $this->services['security.firewall.map.context.main'] = new \Symfony\Bundle\SecurityBundle\Security\FirewallContext(array(0 => new \Symfony\Component\Security\Http\Firewall\ChannelListener($e, new \Symfony\Component\Security\Http\EntryPoint\RetryAuthenticationEntryPoint(80, 443), $a), 1 => new \Symfony\Component\Security\Http\Firewall\ContextListener($b, array(0 => new \Symfony\Component\Security\Core\User\InMemoryUserProvider()), 'main', $a, $this->get('event_dispatcher', ContainerInterface::NULL_ON_INVALID_REFERENCE)), 2 => new \Symfony\Component\Security\Http\Firewall\AnonymousAuthenticationListener($b, '569b89cbe5ebe4.49173974', $a, $c), 3 => new \Symfony\Component\Security\Http\Firewall\AccessListener($b, $this->get('security.access.decision_manager'), $e, $c)), new \Symfony\Component\Security\Http\Firewall\ExceptionListener($b, $this->get('security.authentication.trust_resolver'), new \Symfony\Component\Security\Http\HttpUtils($d, $d), 'main', NULL, NULL, NULL, $a, false));
+        return $this->services['security.firewall.map.context.main'] = new \Symfony\Bundle\SecurityBundle\Security\FirewallContext(array(0 => new \Symfony\Component\Security\Http\Firewall\ChannelListener($e, new \Symfony\Component\Security\Http\EntryPoint\RetryAuthenticationEntryPoint(80, 443), $a), 1 => new \Symfony\Component\Security\Http\Firewall\ContextListener($b, array(0 => new \Symfony\Component\Security\Core\User\InMemoryUserProvider()), 'main', $a, $this->get('event_dispatcher', ContainerInterface::NULL_ON_INVALID_REFERENCE)), 2 => new \Symfony\Component\Security\Http\Firewall\AnonymousAuthenticationListener($b, '56a35659386409.40951676', $a, $c), 3 => new \Symfony\Component\Security\Http\Firewall\AccessListener($b, $this->get('security.access.decision_manager'), $e, $c)), new \Symfony\Component\Security\Http\Firewall\ExceptionListener($b, $this->get('security.authentication.trust_resolver'), new \Symfony\Component\Security\Http\HttpUtils($d, $d), 'main', NULL, NULL, NULL, $a, false));
     }
     protected function getSecurity_PasswordEncoderService()
     {
@@ -1154,7 +1154,7 @@ class appProdProjectContainer extends Container
     }
     protected function getSecurity_Authentication_ManagerService()
     {
-        $this->services['security.authentication.manager'] = $instance = new \Symfony\Component\Security\Core\Authentication\AuthenticationProviderManager(array(0 => new \Symfony\Component\Security\Core\Authentication\Provider\AnonymousAuthenticationProvider('569b89cbe5ebe4.49173974')), true);
+        $this->services['security.authentication.manager'] = $instance = new \Symfony\Component\Security\Core\Authentication\AuthenticationProviderManager(array(0 => new \Symfony\Component\Security\Core\Authentication\Provider\AnonymousAuthenticationProvider('56a35659386409.40951676')), true);
         $instance->setEventDispatcher($this->get('event_dispatcher'));
         return $instance;
     }
@@ -1533,7 +1533,7 @@ class appProdProjectContainer extends Container
             'assetic.variables' => array(
             ),
             'assetic.java.bin' => '/usr/bin/java',
-            'assetic.node.bin' => ($this->targetDirs[5].'/.linuxbrew/bin/node'),
+            'assetic.node.bin' => '/home/and1/.linuxbrew/bin/node',
             'assetic.ruby.bin' => '/usr/bin/ruby',
             'assetic.sass.bin' => '/usr/local/bin/sass',
             'assetic.reactjsx.bin' => '/usr/bin/jsx',
