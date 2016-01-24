@@ -1,3 +1,12 @@
+/******************************************************************************
+  _(methods with underscore(its not private methods) in components 
+  means that they are not default like componentDidMount() and etc. 
+  and DEVs could use them to decouple default methods and production methods)
+  
+  link : https://www.youtube.com/watch?v=tKwrl4HopeU&index=7&list=PLLnpHn493BHFfs3Uj5tvx17mXk4B4ws4p
+   //1:40 min//
+******************************************************************************/
+
 var App = React.createClass({
   render: function() {
   return ( 
@@ -32,7 +41,7 @@ var AppForm = React.createClass({
     return {
       city: "",
       activeCity: "",
-      weather: "hello weather",
+      weather: "",
       tabs: ["London", "Paris"]
     }
   },
@@ -62,11 +71,17 @@ var AppForm = React.createClass({
     },
 
   _retrieveWeather: function(city) {
+    var rootUrlStart = 'http://api.openweathermap.org/data/2.5/weather?q=',
+        rootUrlEnd = '&appid=44db6a862fba0b067b1930da0d769e98';
+
     this.setState({
       activeCity: city
     });
     this._saveCurrentState();
-      $.get('http://api.openweathermap.org/data/2.5/weather?q=' + city + '&appid=44db6a862fba0b067b1930da0d769e98', function(result) {
+    function getWeather() {
+      return $.get(rootUrlStart+city+rootUrlEnd);
+    };
+    getWeather().then(function(result) {
         this.setState({
           weather: {
               main: result.main,
@@ -86,6 +101,7 @@ var AppForm = React.createClass({
     this._saveCurrentState();
     if (_removedCity[0] === this.state.activeCity) {
       this.state.activeCity = this.state.tabs[0];
+      this._retrieveWeather(this.state.activeCity);
     }
   },
 
@@ -93,18 +109,23 @@ var AppForm = React.createClass({
     e.preventDefault();
     for (var i = 0; i < this.state.tabs.length; i++) {
       if(this.state.city.toLowerCase() === this.state.tabs[i].toLowerCase()) {
+        this.setState({
+          activeCity: this.state.city,
+          city: ""
+        });
+      this._retrieveWeather(this.state.city);
+      this._saveCurrentState();
         return false;
       }
     };
     var newState = this.state.tabs.slice();
       newState.push(this.state.city);
       this.setState({
-        activeCity: this.state.city
-      });
-      this.setState({
+        activeCity: this.state.city,
         city: "",
         tabs: newState
       });
+      this._retrieveWeather(this.state.city);
       this._saveCurrentState();
   },
 
@@ -135,7 +156,7 @@ var AppForm = React.createClass({
         </div>
       </div>
       <div>
-        {this.state.weather.main ? <div><WeatherInfo data={this.state.weather}/></div> : null}
+        {this.state.tabs.length ? <div><WeatherInfo data={this.state.weather}/></div> : <Empty />}
       </div>
     </div>
     )
@@ -144,7 +165,7 @@ var AppForm = React.createClass({
 
 //Tab Component
 var Tab = React.createClass({
-    
+       
     _retrieveWeatherData: function() {
         this.props.on_retrieveWeather(this.props.city);
     },
@@ -165,6 +186,19 @@ var Tab = React.createClass({
     }
 });
 
+//Tab Component
+var Empty = React.createClass({
+    render: function() {
+        return (
+          <div>
+            <br />
+            <br />
+              <h1 className='empty'>Your list is empty! add any city please...</h1>
+          </div>
+        );
+    }
+});
+
 //Widget Component
 var WeatherInfo = React.createClass({
     propTypes: {
@@ -172,23 +206,39 @@ var WeatherInfo = React.createClass({
         main: React.PropTypes.object.isRequired
     },
     render: function() {
+      var weather,
+          main = this.props.data.main,
+          wind = this.props.data.wind,
+          imgSrc = 'http://www.opengrid.com/content/wp-content/uploads/2013/01/CIM-for-Weather-Logo.png';
+        
+        if(!this.props.data) {
+          weather = (
+              <h1>Hi mate! Choose your City right Now!</h1>
+          )
+        } else {
+          weather = (
+            <div>
+              <div className='image'>
+                <img alt='weatherImg' src={imgSrc} />
+              </div>
+              <br /> <br />
+              <div className='main'>
+                <p><span className='spanner'>Humidity:</span> <span className='label label-default'>{main.humidity}</span></p>
+                <p><span className='spanner'>Pressure:</span> <span className='label label-default'>{main.pressure}</span></p>
+                <p><span className='spanner'>Overall temperature:</span> <span className='label label-default'>{main.temp}</span></p>
+                <p><span className='spanner'>Max_Temp:</span> <span className='label label-default'>{main.temp_max}</span></p>
+                <p><span className='spanner'>Min_Temp:</span> <span className='label label-default'>{main.temp_min}</span></p>
+              </div> 
+              <div className='wind'>
+                <p><span className='spanner'>Wind in Degrees:</span> <span className='label label-default'>{wind.deg}</span></p>
+                <p><span className='spanner'>Wind Speed:</span> <span className='label label-default'>{wind.speed}</span></p>            
+              </div>
+            </div>
+          )  
+        };        
       return ( 
-        <div className='wrapper'>
-          <div className='image'>
-            <img alt='weatherImg' src='http://www.opengrid.com/content/wp-content/uploads/2013/01/CIM-for-Weather-Logo.png' />
-          </div>
-          <br /> <br />
-          <div className='main'>
-            <p><span className='spanner'>Humidity:</span> <span className='label label-default'>{this.props.data.main.humidity}</span></p>
-            <p><span className='spanner'>Pressure:</span> <span className='label label-default'>{this.props.data.main.pressure}</span></p>
-            <p><span className='spanner'>Overall temperature:</span> <span className='label label-default'>{this.props.data.main.temp}</span></p>
-            <p><span className='spanner'>Max_Temp:</span> <span className='label label-default'>{this.props.data.main.temp_max}</span></p>
-            <p><span className='spanner'>Min_Temp:</span> <span className='label label-default'>{this.props.data.main.temp_min}</span></p>
-          </div> 
-          <div className='wind'>
-            <p><span className='spanner'>Wind in Degrees:</span> <span className='label label-default'>{this.props.data.wind.deg}</span></p>
-            <p><span className='spanner'>Wind Speed:</span> <span className='label label-default'>{this.props.data.wind.speed}</span></p>            
-          </div>
+        <div className='wrapper'> 
+          <div>{ weather }</div>
         </div>
       );
     }

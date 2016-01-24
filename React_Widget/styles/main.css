@@ -82,3 +82,16 @@ img:hover {
 .panel-primary {
     border-color: #333 !important;
 }
+
+.active {
+    border-radius: 3px !important;
+    border: 1px solid #a55 !important;
+    background-color: #333 !important;
+}
+
+.empty {
+    text-align: center;
+    margin-top: 10px auto;
+    padding: 8px;
+    text-transform: uppercase;
+}
