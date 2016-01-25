@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en" ng-app='shoppingApp'>
+
+<head>
+    <meta charset="UTF-8">
+    <title>shoppingApp</title>
+    <!-- Material Design fonts -->
+    <link rel="stylesheet" href="//fonts.googleapis.com/css?family=Roboto:300,400,500,700" type="text/css">
+    <link href="//fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="styles/main.css">
+    <link rel="stylesheet" type="text/css" href="scripts/vendor/bootstrap/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="scripts/vendor/bootstrap-material-design/dist/css/bootstrap-material-design.min.css">
+    <link rel="stylesheet" type="text/css" href="scripts/vendor/bootstrap-material-design/dist/css/ripples.min.css">
+    <script src='scripts/vendor/lodash/lodash.min.js'></script>
+    <script src='scripts/vendor/jquery/dist/jquery.min.js'></script>
+    <script src='scripts/vendor/bootstrap-material-design/dist/js/material.min.js'></script>
+    <script src='scripts/vendor/angular/angular.min.js'></script>
+    <script src='scripts/vendor/angular-ui-router/release/angular-ui-router.min.js'></script>
+    <script src='scripts/vendor/restangular/dist/restangular.min.js'></script>
+    <script src='scripts/vendor/ngstorage/ngStorage.min.js'></script>
+</head>
+
+<body ng-init='$scope.users = $scope.$storage.users || [];
+            $scope.currentUser = $scope.$storage.currentUser || {};
+            $scope.data = $scope.$storage.data || []'>
+    <div ui-view class='container-fluid'></div>
+    <!-- Custom Scripts section -->
+    <script src='scripts/app.js'></script>
+    <script src='scripts/app.config.js'></script>
+    <script src='scripts/modules/services.mod.js'></script>
+    <script src='scripts/modules/filters.mod.js'></script>
+    <script src='scripts/modules/controllers.mod.js'></script>
+    <script src='scripts/modules/directives.mod.js'></script>
+    <script src='scripts/services/productReceive.js'></script>
+    <script src='scripts/filters/productFilter.js'></script>
+    <script src='scripts/controllers/MainController.js'></script>
+    <script src='scripts/directives/loginForm.js'></script>
+</body>
+
+</html>

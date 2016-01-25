@@ -1,0 +1,76 @@
+<!-- NAVIGATION -->
+<nav class="navbar navbar-inverse" role="navigation">
+    <div class="navbar-header">
+        <a class="navbar-brand">Authorization Page</a>
+    </div>
+</nav>
+<div class="container">
+    <h1 class="label label-info">Login Form</h1>
+    <form class="form" role="form" name='authorizeForm' novalidate ng-submit='authorize(user)'>
+        <fieldset>
+            <!-- First name -->
+            <div class="form-group label-static">
+                <label class='control-label' for="fname">Enter your name:</label>
+                <input ng-minlength=1 name='fname' ng-model="user.fname" type="text" class="form-control" id="fname" placeholder='First name' />
+                <div class="error" ng-show="authorizeForm.fname.$dirty && authorizeForm.fname.$invalid">
+                    <small class='error' ng-show="authorizeForm.fname.$error.minlength">this field shouldnt be empty</small>
+                </div>
+                <div ng-show='authorizeForm.fname.$dirty && authorizeForm.fname.$valid'>
+                    <small class='valid'>This field is correct.</small>
+                </div>
+            </div>
+            <!-- Last name -->
+            <div class="form-group label-static">
+                <label class='control-label' for="lname">Enter your surname:</label>
+                <input ng-minlength=1 name='lname' ng-model="user.lname" type="text" class="form-control" id="lname" placeholder='Last name' />
+                <div class="error" ng-show="authorizeForm.lname.$dirty && authorizeForm.lname.$invalid">
+                    <small class='error' ng-show="authorizeForm.lname.$error.minlength">this field shouldnt be empty</small>
+                </div>
+                <div ng-show='authorizeForm.lname.$dirty && authorizeForm.lname.$valid'>
+                    <small class='valid'>This field is correct.</small>
+                </div>
+            </div>
+            <!-- Email -->
+            <div class="form-group label-static">
+                <label class='control-label' for="email">Email address:</label>
+                <input ng-minlength=8 name='email' ng-model="user.email" type="email" class="form-control" required id="email" placeholder='example@gmail.com' />
+                <div class="error" ng-show="authorizeForm.email.$dirty && authorizeForm.email.$invalid">
+                    <small class='error' ng-show="authorizeForm.email.$error.required">This field is required!</small>
+                    <small class='error' ng-show="authorizeForm.email.$error.minlength">email field must contain at least 8 chars</small>
+                </div>
+                <div ng-show='authorizeForm.email.$dirty && authorizeForm.email.$valid'>
+                    <small class='valid'>This field is correct.</small>
+                </div>
+            </div>
+            <!-- tel # -->
+            <div class="form-group label-static">
+                <label class='control-label' for="tel">Telephone #:</label>
+                <input ng-minlength=10 name='tel' ng-model="user.tel" type="tel" class="form-control" id="tel" placeholder='+3(8)**********' />
+                <div class="error" ng-show="authorizeForm.tel.$dirty && authorizeForm.tel.$invalid">
+                    <small class='error' ng-show="authorizeForm.tel.$error.minlength">tel field must contain at least 10 chars</small>
+                </div>
+                <div ng-show='authorizeForm.tel.$dirty && authorizeForm.tel.$valid'>
+                    <small class='valid'>This field is correct.</small>
+                </div>
+            </div>
+            <!-- Password -->
+            <div class="form-group label-static">
+                <label class='control-label' for="pwd">Password:</label>
+                <input ng-minlength=6 ng-maxlength=16 name='pwd' ng-model="user.pwd" required type="password" class="form-control" ng-patter='/^[A-Za-z0-9!@#$%^&*()_]{6,16}$/' id="pwd" placeholder='*********' />
+                <div class="error" ng-show="authorizeForm.pwd.$dirty && authorizeForm.pwd.$invalid">
+                    <small class='error' ng-show="authorizeForm.pwd.$error.required">This field is required!</small>
+                    <small class='error' ng-show="authorizeForm.pwd.$error.minlength">password field must contain at least 6 characters</small>
+                    <small class='error' ng-show="authorizeForm.pwd.$error.maxlength">Your password cannot be longer than 16 characters</small>
+                </div>
+                <div ng-show='authorizeForm.pwd.$dirty && authorizeForm.pwd.$valid'>
+                    <small class='valid'>This field is correct.</small>
+                </div>
+            </div>
+            <div class="form-group">
+                <label>
+                    <input ng-init='user.remember = false' type="checkbox" ng-model="user.remember" /> Remember me</label>
+            </div>
+            <button ng-disabled="authorizeForm.$invalid" type="submit" class="btn btn-default btn-raised">Submit</button>
+        </fieldset>
+    </form>
+</div>

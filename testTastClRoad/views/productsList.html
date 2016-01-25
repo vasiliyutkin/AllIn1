@@ -1,0 +1,63 @@
+<nav class="navbar navbar-inverse" role="navigation">
+    <div class="navbar-header">
+        <a class="navbar-brand">Edit Items Page</a>
+    </div>
+    <ul class="nav navbar-nav pull-right">
+        <li><a ui-sref='home'>Home</a></li>
+        <li><a ui-sref='dashboard'>Settings</a></li>
+        <li><a href='#/login' ng-click="logout()">Logout</a></li>
+    </ul>
+</nav>
+<br />
+<div class="container">
+    <table id="productTable" class="table table-stripped table-bordered table-hover">
+        <thead>
+            <tr class="info">
+                <th>Name</th>
+                <th>Price</th>
+                <th>Description</th>
+                <th>Category</th>
+                <th>CRUD</th>
+            </tr>
+        </thead>
+        <tr ng-repeat="item in data" ng-hide="item.id == editedProduct.id">
+            <td>{{item.name}}</td>
+            <td>{{item.price | currency }}</td>
+            <td>{{item.description}}</td>
+            <td>{{item.category}}</td>
+            <td>
+                <button ng-click="startEdit(item)" class="btn btn-xs btn-info">
+                    Edit
+                </button>
+                <button ng-click="deleteProduct(item)" class="btn btn-xs btn-danger">
+                    Delete
+                </button>
+            </td>
+        </tr>
+        <tr ng-class="{danger: editedProduct}">
+            <td>
+                <input type='text' maxlength="255" placeholder='some awesome text' ng-model="editedProduct.name" required />
+            </td>
+            <td>
+                <input type='number' placeholder='some awesome text' ng-model="editedProduct.price" required />
+            </td>
+            <td>
+                <textarea placeholder='some awesome text' ng-model="editedProduct.description" rows="5" cols="52" required></textarea>
+            </td>
+            <td>
+                <input placeholder='some awesome text' ng-model="editedProduct.category" required />
+            </td>
+            <td>
+                <button ng-hide="editedProduct.id" ng-click="createProduct(editedProduct)" class="btn btn-xs btn-success">
+                    Create
+                </button>
+                <button ng-show="editedProduct.id" ng-click="updateProduct(editedProduct)" class="btn btn-xs btn-info">
+                    Save
+                </button>
+                <button ng-show="editedProduct" ng-click="cancelEdit()" class="btn btn-xs btn-warning">
+                    Cancel
+                </button>
+            </td>
+        </tr>
+    </table>
+</div>
