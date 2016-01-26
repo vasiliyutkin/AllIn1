@@ -1,15 +1,51 @@
+*,
+*:before,
+*:after {
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    color: #333;
+    background-color: #fff;
+    margin: 0;
+    padding: 0;
+    width: 100vw;
+    height: 100vh;
+}
+
+header {
+    color: #fafafa;
+    text-shadow: 1px 1px 3px #fafafa;
+    background: #333;
+    background-size: contain;
+    h1 {
+        display: inline-block;
+        padding: 0 20px;
+    }
+    a {
+        display: inline-block;
+        margin: 10px;
+        padding: 10px;
+        color: #fff;
+        text-decoration: none;
+        border-radius: 3px;
+        &.active,
+        &:hover {
+            background-color: #0085F3;
+        }
+    }
+}
+
+section {
+    padding: 20px;
+}
+
 * {
     transition: all .2s ease-in-out !important;
     -moz-user-select: none;
     -webkit-user-select: none;
     user-select: none;
-}
-
-html,
-body {
-    width: 100vw;
-    height: 100vh;
-    background: url("http://subtlepatterns2015.subtlepatterns.netdna-cdn.com/patterns/zwartevilt.png");
 }
 
 .wrapper {
