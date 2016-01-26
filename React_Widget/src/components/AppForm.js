@@ -3,6 +3,10 @@ import Tab from './Tab';
 import Empty from './Empty';
 import WeatherInfo from './WeatherInfo';
 
+var req = {
+    root: 'http://api.openweathermap.org/data/2.5/weather',
+    appid: '44db6a862fba0b067b1930da0d769e98'
+};
 
 export default React.createClass({
   componentWillMount: function() {
@@ -46,18 +50,16 @@ export default React.createClass({
         }
     },
 
-  _retrieveWeather: function(city) {
-    var rootUrlStart = 'http://api.openweathermap.org/data/2.5/weather?q=',
-        rootUrlEnd = '&appid=44db6a862fba0b067b1930da0d769e98';
+  _getWeather: function (city) {
+      return $.get(req.root+'?q='+city+'&appid='+req.appid);
+    },
 
+  _retrieveWeather: function(city) {
     this.setState({
       activeCity: city
     });
     this._saveCurrentState();
-    function getWeather() {
-      return $.get(rootUrlStart+city+rootUrlEnd);
-    };
-    getWeather().then(function(result) {
+    this._getWeather(city).then(function(result) {
         this.setState({
           weather: {
               main: result.main,

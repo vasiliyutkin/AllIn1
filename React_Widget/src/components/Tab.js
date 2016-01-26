@@ -2,7 +2,11 @@ import React from 'react';
 
 
 export default React.createClass({
-       
+     propTypes: {
+        _removeTab : React.PropTypes.func.isRequired
+        _retrieveWeather : React.PropTypes.func.isRequired
+    },  
+
     _retrieveWeatherData: function() {
         this.props.on_retrieveWeather(this.props.city);
     },
