@@ -1,9 +1,0 @@
-_home:
-    path:     /
-    defaults: { _controller: AppBundle:Default:index }
-_about:
-    path:     /about
-    defaults: { _controller: AppBundle:Default:about }
-_description:
-    path:     /description
-    defaults: { _controller: AppBundle:Default:descript }
