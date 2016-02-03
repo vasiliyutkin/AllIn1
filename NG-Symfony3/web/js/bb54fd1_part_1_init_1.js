@@ -30,4 +30,18 @@ app.run(function($log) {
     $log.log("C controller is on the headlines");
 }), app.controller("homeSlideDController", function($scope, $log) {
     $log.log("D controller is on the headlines");
+}), app.directive("time", function() {
+    return {
+        restrict: "AE",
+        transclude: !1,
+        controller: function($scope, $interval) {
+            $interval(function() {
+                var date = new Date();
+                $scope.hh = date.getHours(), $scope.mm = date.getMinutes(), $scope.ss = date.getSeconds(), 
+                $scope.hh < 10 && ($scope.hh = "0" + $scope.hh), $scope.mm < 10 && ($scope.mm = "0" + $scope.mm), 
+                $scope.ss < 10 && ($scope.ss = "0" + $scope.ss);
+            }, 1e3);
+        },
+        template: '<div id="time"><span>[[ hh ]]</span>:<span>[[ mm ]]</span>:<span>[[ ss ]]</span></div>'
+    };
 });

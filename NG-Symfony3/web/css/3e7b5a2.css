@@ -1,10 +1,127 @@
-*{box-sizing:border-box}html,body{position:relative;height:100%;padding:0;margin:0;background:#fff;font-family:Arial,Helvetica,sans-serif;font-size:14px;color:#333}#wrapper{display:table;width:100%;height:100%;min-height:100%}#wrapper .powered-text{text-align:center;color:#fff;font-size:14px;font-variant:small-caps}#wrapper .feedback{float:right;color:#fff;margin:10px}#wrapper #powered-by{display:flex;justify-content:space-around;margin:auto;background-color:#fff !important;align-items:baseline}#wrapper #powered-by .powered-item{display:flex;width:50px;height:50px;background:#fff;margin:20px}#wrapper header,#wrapper footer{display:table-row;height:1px;width:100%;text-align:center;background-color:#333;text-transform:uppercase;color:#333;padding:20px}#wrapper header{position:relative;background-color:#fff !important}#wrapper footer{margin-top:50px}#wrapper #content{display:table-row;position:relative;text-align:center;width:1040px;margin:auto}
+* {
+  box-sizing: border-box;
+  user-select: none;
+  -moz-user-select: none;
+  -webkit-user-select: none; }
+
+html,
+body {
+  position: relative;
+  height: 100%;
+  padding: 0;
+  margin: 0;
+  background: white;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 14px;
+  color: #333; }
+
+#wrapper {
+  display: table;
+  width: 100%;
+  height: 100%;
+  min-height: 100%; }
+  #wrapper .powered-text {
+    text-align: center;
+    color: white;
+    font-size: 14px;
+    font-variant: small-caps; }
+  #wrapper .feedback {
+    float: right;
+    color: #fff;
+    margin: 10px; }
+    #wrapper .feedback a {
+      color: #c55;
+      text-decoration: none;
+      padding-bottom: 4px;
+      text-transform: capitalize;
+      font-weight: 600;
+      border-bottom: 2px solid #a55;
+      transition: all .3s ease-in-out;
+      margin: 5px;
+      padding: 5px; }
+      #wrapper .feedback a:hover {
+        text-shadow: 1px 1px 2px #10aded;
+        border-bottom: 2px solid #10aded;
+        color: #10aded; }
+    #wrapper .feedback span {
+      margin: 10px; }
+  #wrapper #powered-by {
+    display: flex;
+    justify-content: space-around;
+    margin: auto;
+    background-color: #fff !important;
+    align-items: baseline; }
+    #wrapper #powered-by .powered-item {
+      display: flex;
+      width: 50px;
+      height: 50px;
+      background: white;
+      margin: 20px; }
+      #wrapper #powered-by .powered-item img {
+        border-radius: 25%;
+        border-bottom: 2px solid #c55;
+        padding-bottom: 5px;
+        transition: all .25s ease-in-out; }
+        #wrapper #powered-by .powered-item img:hover {
+          cursor: pointer;
+          transform: scale(1.2); }
+
+header,
+footer {
+  display: table-row;
+  height: 1px;
+  width: 100%;
+  text-align: center;
+  background-color: #333;
+  text-transform: uppercase;
+  color: #333;
+  padding: 20px; }
+
+header {
+  position: relative;
+  background-color: white !important; }
+
+footer {
+  margin-top: 50px; }
+
+#content {
+  display: table-row;
+  position: relative;
+  text-align: center;
+  width: 1040px;
+  margin: auto; }
+
+#time {
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: space-around;
+  max-width: 70px;
+  font-weight: bold;
+  padding: 8px;
+  top: 50px;
+  border-bottom-left-radius: 15px;
+  position: fixed;
+  right: 0;
+  border-bottom: 5px solid #444;
+  border-right: none; }
+  #time span:nth-child(1) {
+    color: #60061e;
+    font-weight: 800; }
+  #time span:nth-child(2) {
+    color: #bada55;
+    font-weight: 700; }
+  #time span:nth-child(3) {
+    color: #7a2d15;
+    font-weight: 600; }
+
+/*Animations*/
+
 /*# sourceMappingURL=styles.css.map */
 
 {
 "version": 3,
-"mappings": "AAQA,CAAC,CACG,UAAU,CAAE,UAAU,CAE1B,SAAU,CACN,QAAQ,CAAE,QAAQ,CAClB,MAAM,CAAE,IAAI,CACZ,OAAO,CAAE,CAAC,CACV,MAAM,CAAE,CAAC,CACT,UAAU,CAZL,IAAK,CAaV,WAAW,CAjBI,0BAA4B,CAkB3C,SAAS,CAjBI,IAAI,CAkBjB,KAAK,CAhBA,IAAI,CAkBb,QAAQ,CACJ,OAAO,CAAE,KAAK,CACd,KAAK,CAAE,IAAI,CACX,MAAM,CAAE,IAAI,CACZ,UAAU,CAAE,IAAI,CAEhB,sBAAa,CACT,UAAU,CAAE,MAAM,CAClB,KAAK,CAzBJ,IAAK,CA0BN,SAAS,CAAE,IAAI,CACf,YAAY,CAAE,UAAU,CAE5B,kBAAS,CACL,KAAK,CAAE,KAAK,CACZ,KAAK,CAAE,IAAI,CACX,MAAM,CAAE,IAAI,CAEhB,oBAAW,CACP,OAAO,CAAE,IAAI,CACb,eAAe,CAAE,YAAY,CAC7B,MAAM,CAAE,IAAI,CACZ,gBAAgB,CAAE,eAAe,CACjC,WAAW,CAAE,QAAQ,CAErB,kCAAa,CACT,OAAO,CAAE,IAAI,CACb,KAAK,CAAE,IAAI,CACX,MAAM,CAAE,IAAI,CACZ,UAAU,CA7Cb,IAAK,CA8CF,MAAM,CAAE,IAAI,CAEpB,+BAAc,CACV,OAAO,CAAE,SAAS,CAClB,MAAM,CAAE,GAAG,CACX,KAAK,CAAE,IAAI,CACX,UAAU,CAAE,MAAM,CAClB,gBAAgB,CAtDf,IAAI,CAuDL,cAAc,CAAE,SAAS,CACzB,KAAK,CAxDJ,IAAI,CAyDL,OAAO,CAAE,IAAI,CAEjB,eAAM,CACF,QAAQ,CAAE,QAAQ,CAClB,gBAAgB,CAAE,eAAkB,CAExC,eAAM,CACF,UAAU,CAAE,IAAI,CAEpB,iBAAQ,CACJ,OAAO,CAAE,SAAS,CAClB,QAAQ,CAAE,QAAQ,CAClB,UAAU,CAAE,MAAM,CAClB,KAAK,CAnED,MAAM,CAoEV,MAAM,CAAE,IAAI",
-"sources": ["../../css/styles.sass"],
+"mappings": "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",
+"sources": ["../../css/styles.scss"],
 "names": [],
 "file": "styles.css"
 }
