@@ -1,0 +1,26 @@
+{
+    "name": "cleveroad",
+    "authors": [
+        "Andrew Blinov <D-sert@ya.ru>"
+    ],
+    "description": "",
+    "main": "",
+    "moduleType": [],
+    "license": "MIT",
+    "homepage": "",
+    "ignore": [
+        "**/.*",
+        "node_modules",
+        "bower_components",
+        "test",
+        "tests"
+    ],
+    "devDependencies": {
+        "restangular": "~1.5.1",
+        "angular": "~1.4.9",
+        "angular-ui-router": "~0.2.15",
+        "bootstrap-material-design": "~0.5.7",
+        "ngstorage": "ng-storage#~0.4.2",
+        "lodash": "~3.10.0"
+    }
+}

@@ -1,0 +1,19 @@
+{
+  "name": "Ng",
+  "version": "0.1.0",
+  "authors": [
+    "= <D-sert@ya.ru>"
+  ],
+  "description": "",
+  "main": "index.html",
+  "moduleType": [],
+  "license": "MIT",
+  "homepage": "index.html",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ]
+}

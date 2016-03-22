@@ -1,0 +1,15 @@
+<div class="row">
+    <div class="col-md-4">
+        <img src="https://www.intellipointcorp.net/wp-content/uploads/2015/03/angularjs200x200.png" alt="NgApp">
+    </div>
+    <div class="col-md-4">
+        <input type="search" name="search" placeholder="search" ng-model='filter' class="form-control">
+    </div>
+    <div class="col-md-4">
+        <ul>
+            <li ng-repeat="item in list | filter:filter track by $index">
+                Name: <span ng-bind="item.name"></span>, Age: <span ng-bind="item.age" ></span>, Status: <span style="color: #c55; text-transform: uppercase" ng-bind="item.status"></span>
+            </li>
+        </ul>
+    </div>
+</div>

@@ -1,0 +1,114 @@
+* {
+    transition: all .2s ease-in, transform .3s ease-in;
+}
+
+body,
+.navbar {
+    background-image: url(http://subtlepatterns2015.subtlepatterns.netdna-cdn.com/patterns/geometry2.png);
+}
+
+.container {
+    background-color: #fafafa;
+}
+
+input {
+    border: 2px solid #333;
+    border-radius: 4px;
+    margin: 7px;
+    padding: 5px;
+}
+
+span {
+    color: lightgreen;
+    font-weight: 500;
+    text-transform: capitalize;
+}
+
+input[type='submit'] {
+    background: #fafafa;
+    color: #1a1a1a;
+    padding: 7px;
+    width: 70px;
+    text-transform: uppercase;
+}
+
+input[type='submit']:hover {
+    width: 90px;
+    color: #fff;
+    font-weight: 900;
+    background: lightcoral;
+    -webkit-box-shadow: 2px -4px 6px -2px rgba(0, 0, 0, 0.75);
+    -moz-box-shadow: 2px -4px 6px -2px rgba(0, 0, 0, 0.75);
+    box-shadow: 2px -4px 6px -2px rgba(0, 0, 0, 0.75);
+    cursor: pointer;
+}
+
+.states {
+    text-decoration: none;
+    text-transform: uppercase;
+    font-weight: 700;
+    color: #ee7471;
+}
+
+.states:hover,
+.states:focus,
+.states:active {
+    font-size: 13px;
+    text-decoration: none;
+    font-weight: 900;
+    transform: rotateX(180deg);
+    color: #66b2ff;
+}
+
+.sidebar {
+    display: flex;
+    flex-flow: column nowrap;
+    justify-content: flex-start;
+    align-content: center;
+    align-items: flex-start;
+    margin: auto;
+    padding: 10px;
+    color: #333;
+}
+
+.sidebar span {
+    color: #3578ee;
+    font-weight: 900;
+    font-size: 18px;
+}
+
+.sidebar h1 {
+    align-self: center;
+}
+
+.sidebar a {
+    text-decoration: none;
+    text-transform: capitalize;
+    color: #333;
+}
+
+.wrapper {
+    border: 2px solid #333;
+    border-radius: 3px;
+    padding: 20px;
+    min-height: 500px;
+}
+
+.disabled {
+    pointer-events: none;
+    color: #fff;
+    background: #333;
+    padding: 10px;
+    margin: 5px;
+    border-radius: 5px;
+    text-transform: lowercase;
+}
+
+.enabled {
+    pointer-events: auto;
+    color: #c55;
+    text-transform: uppercase;
+}
+
+
+/*# sourceMappingURL=style.css.map */

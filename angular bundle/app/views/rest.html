@@ -1,0 +1,17 @@
+<div class="col-md-4">
+    <input placeholder='filter your goods' class="form-control" ng-model='sort' style="margin: 20px;"></input>
+</div>
+<table class="table table-bordered table-stripped table-hover">
+    <thead>
+        <tr class="warning">
+            <th>Sort</th>
+            <th>Price</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr ng-repeat="item in todo.things | orderBy:'-price' | filter: sort track by $index">
+            <td ng-bind="item.sort | uppercase"></td>
+            <td ng-bind="item.price | currency"></td>
+        </tr>
+    </tbody>
+</table>

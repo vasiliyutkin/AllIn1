@@ -1,0 +1,78 @@
+[{
+    "id": 1,
+    "name": "Stake",
+    "price": 132,
+    "description": "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quas quis, sint dignissimos quisquam quo, cum voluptatibus! Rerum, quibusdam ab beatae, repudiandae quia adipisci reprehenderit ipsam.",
+    "show": false,
+    "category": "football"
+}, {
+    "id": 2,
+    "name": "Football field",
+    "price": 12020,
+    "description": "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quas quis, sint dignissimos quisquam quo, cum voluptatibus! Rerum, quibusdam ab beatae, repudiandae quia adipisci reprehenderit ipsam.",
+    "show": false,
+    "category": "volleyball"
+}, {
+    "id": 3,
+    "name": "Ball",
+    "price": 12,
+    "description": "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quas quis, sint dignissimos quisquam quo, cum voluptatibus! Rerum, quibusdam ab beatae, repudiandae quia adipisci reprehenderit ipsam.",
+    "show": false,
+    "category": "basketball"
+}, {
+    "id": 4,
+    "name": "Rocket",
+    "price": 37,
+    "description": "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quas quis, sint dignissimos quisquam quo, cum voluptatibus! Rerum, quibusdam ab beatae, repudiandae quia adipisci reprehenderit ipsam.",
+    "show": false,
+    "category": "football"
+}, {
+    "id": 5,
+    "name": "Sniper Rifle",
+    "price": 1500,
+    "description": "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quas quis, sint dignissimos quisquam quo, cum voluptatibus! Rerum, quibusdam ab beatae, repudiandae quia adipisci reprehenderit ipsam.",
+    "show": false,
+    "category": "hunting"
+}, {
+    "id": 6,
+    "name": "Boomerang",
+    "price": 35,
+    "description": "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quas quis, sint dignissimos quisquam quo, cum voluptatibus! Rerum, quibusdam ab beatae, repudiandae quia adipisci reprehenderit ipsam.",
+    "show": false,
+    "category": "rest"
+}, {
+    "id": 7,
+    "name": "Kitchen",
+    "price": 2300,
+    "description": "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quas quis, sint dignissimos quisquam quo, cum voluptatibus! Rerum, quibusdam ab beatae, repudiandae quia adipisci reprehenderit ipsam.",
+    "show": false,
+    "category": "Home"
+}, {
+    "id": 8,
+    "name": "Spoon",
+    "price": 5,
+    "description": "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quas quis, sint dignissimos quisquam quo, cum voluptatibus! Rerum, quibusdam ab beatae, repudiandae quia adipisci reprehenderit ipsam.",
+    "show": false,
+    "category": "Home"
+}, {
+    "id": 9,
+    "name": "Toilet",
+    "price": 230,
+    "description": "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quas quis, sint dignissimos quisquam quo, cum voluptatibus! Rerum, quibusdam ab beatae, repudiandae quia adipisci reprehenderit ipsam.",
+    "show": false,
+    "category": "Home"
+}, {
+    "id": 10,
+    "name": "Flowers",
+    "price": 18,
+    "description": "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quas quis, sint dignissimos quisquam quo, cum voluptatibus! Rerum, quibusdam ab beatae, repudiandae quia adipisci reprehenderit ipsam.",
+    "show": false,
+    "category": "Street"
+}, {
+    "id": 11,
+    "name": "Huskie",
+    "price": 2000,
+    "description": "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quas quis, sint dignissimos quisquam quo, cum voluptatibus! Rerum, quibusdam ab beatae, repudiandae quia adipisci reprehenderit ipsam.",
+    "show": false,
+    "category": "Dogs"
+}]
